@@ -18,7 +18,7 @@ lightbox.option({
     //  ...  другие  опции
 }); 
 
-/ Инициализация Particles.js
+// Инициализация Particles.js
 particlesJS("particles-js", {
     "particles": {
         "number": {
