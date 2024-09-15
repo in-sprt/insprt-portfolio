@@ -382,6 +382,15 @@ footer {
     font-size: 1.2rem;
 }
 
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /*  Располагаем  контейнер  под  контентом  */
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     .container {
