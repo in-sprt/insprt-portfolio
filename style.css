@@ -264,6 +264,23 @@ h2 {
     font-weight: 700;
 }
 
+.portfolio-link {
+    display: block; /*  Чтобы  ссылка  занимала  всю  ширину  блока  */
+    text-decoration: none; /*  Убираем  подчеркивание  ссылки  */
+}
+
+.portfolio-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-top: 10px; 
+}
+
+.portfolio-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-top: 20px;
+}
+
 /* Contact section */
 .contact-form {
     max-width: 600px;
