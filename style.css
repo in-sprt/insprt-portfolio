@@ -364,6 +364,24 @@ footer {
     color: lighten(var(--text-color), 20%);
 }
 
+/*  Стили  для  Lightbox  можно  настроить  через  файл  lightbox.css  или  через  JavaScript  опции.  */
+/*  Здесь  приведены  некоторые  примеры  настройки  стилей:  */
+
+.lightboxOverlay {
+    background-color: rgba(0, 0, 0, 0.8); /*  Цвет  фона  overlay  */
+}
+
+.lightbox .lb-image {
+    border-radius: 10px; /*  Border-radius  для  изображения  */
+}
+
+.lightbox .lb-caption {
+    background-color: rgba(0, 0, 0, 0.7); /*  Цвет  фона  заголовка  */
+    color: var(--secondary-color); /*  Цвет  текста  заголовка  */
+    padding: 10px; 
+    font-size: 1.2rem;
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     .container {
