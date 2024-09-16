@@ -9,30 +9,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Обработка формы обратной связи
 const form = document.getElementById('my-form');
-let isSubmitting = false; // Флаг для отслеживания статуса отправки
+const submitButton = form.querySelector('button[type="submit"]'); // Получаем кнопку отправки
+let formSent = false; // Флаг, указывающий, была ли форма отправлена
 
 form.addEventListener('submit', (event) => {
-  event.preventDefault(); 
+  event.preventDefault(); // Предотвращаем стандартную отправку
 
-  if (isSubmitting) {
-    return; // Предотвращаем повторную отправку, если форма уже отправляется
+  // Проверяем, отправлялась ли форма ранее
+  if (formSent) {
+    return; // Если да, ничего не делаем
   }
-
-  isSubmitting = true; // Устанавливаем флаг, что форма отправляется
-
-  // Создаем элемент для сообщения о статусе
-  const statusMessage = document.createElement('div');
-  statusMessage.textContent = 'Отправка...';
-  statusMessage.style.color = 'green';
-  form.appendChild(statusMessage); // Добавляем сообщение в форму
 
   // Собираем данные
   const formData = new FormData(form);
 
   // URL вашей Google Forms 
-  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeEEBv67u0q6N0li1Py1a3hDQTfyxY8ZrgImF44ldGv_7YzKg/formResponse'; 
+  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeEEBv67u0q6N0li1Py1a3hDQTfyxY8ZrgImF44ldGv_7YzKg/formResponse';
+
+  // Делаем кнопку отправки неактивной
+  submitButton.disabled = true;
+  submitButton.textContent = 'Отправка...'; // Изменяем текст кнопки
 
   // Отправляем данные
   fetch(formUrl, {
@@ -41,15 +38,19 @@ form.addEventListener('submit', (event) => {
   })
     .then(response => {
       if (response.ok) {
-        statusMessage.textContent = 'Спасибо! Ваше сообщение отправлено.';
-        form.reset(); // Очищаем форму
+        // Показываем сообщение об успехе
+        form.innerHTML = '<p class="success-message">Спасибо! Ваше сообщение отправлено.</p>'; 
+
+        // Добавляем анимацию (например, плавное исчезновение формы)
+        form.style.transition = 'opacity 0.5s ease-in-out';
+        form.style.opacity = '0';
+
+        formSent = true; // Устанавливаем флаг, что форма отправлена
       } else {
-        statusMessage.textContent = 'Ошибка при отправке. Попробуйте позже.';
-        statusMessage.style.color = 'red';
+        alert('Ошибка при отправке. Попробуйте позже.');
+        submitButton.disabled = false;
+        submitButton.textContent = 'Отправить';
       }
-    })
-    .finally(() => {
-      isSubmitting = false; // Сбрасываем флаг после завершения отправки
     });
 });
 
