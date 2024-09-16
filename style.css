@@ -615,8 +615,6 @@ nav ul li a:hover {
     background-color: var(--accent-color); /*  Цвет  активного  буллета  */
 }
 
-/* ... (предыдущие стили) ... */
-
 /* Contact Section */
 #contact {
     padding: 80px 0;
@@ -652,15 +650,41 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
-/* Стили для блока с Яндекс.Формой (опционально) */
-.yandex-form {
-    text-align: center; /* Центрируем форму */
+/* Форма обратной связи */
+.contact-form {
+    background-color: var(--accent-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
 }
 
-.yandex-form iframe {
-    width: 100%; /* Делаем форму адаптивной */
-    max-width: 650px; /* Ограничиваем максимальную ширину */
-    height: 450px; /* Задаем высоту (можно изменить) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
 }
 
 /* Media Queries (Contact Section) */
