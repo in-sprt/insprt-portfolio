@@ -382,6 +382,57 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
+/* Skills Section */
+#skills {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+}
+
+#skills h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-item {
+    background-color: var(--accent-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.skill-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.skill-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     /*  Адаптация  для  мобильных  устройств  */
