@@ -316,9 +316,7 @@ nav ul li a:hover {
 }
 
 #portfolio h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--text-color);
+    /* Стили для h2 уже определены в общих стилях */
 }
 
 .portfolio-grid {
@@ -336,6 +334,7 @@ nav ul li a:hover {
     font-weight: 600;
     margin-bottom: 20px;
     color: var(--text-color);
+    text-align: center; 
 }
 
 .portfolio-items {
@@ -349,6 +348,10 @@ nav ul li a:hover {
     overflow: hidden; 
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.portfolio-item a {
+    display: block; /*  Чтобы  ссылка  занимала  всю  площадь  элемента  */
 }
 
 .portfolio-item img {
@@ -408,6 +411,13 @@ nav ul li a:hover {
     margin-top: 20px; 
 }
 
+/* Media Queries (Portfolio Section) */
+@media (max-width: 768px) {
+    .portfolio-items {
+        grid-template-columns: 1fr; /*  Одна  колонка  на  мобильных  устройствах  */
+    }
+}
+
 /* Lightbox Customization */
 .lightboxOverlay {
     background-color: rgba(0, 0, 0, 0.8);
@@ -415,13 +425,15 @@ nav ul li a:hover {
 
 .lightbox .lb-image {
     border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);  /*  Добавим  тень  к  изображению  */
 }
 
 .lightbox .lb-caption {
     background-color: rgba(0, 0, 0, 0.7);
     color: var(--secondary-color);
-    padding: 10px;
+    padding: 10px 20px; /*  Увеличим  отступы  */
     font-size: 1.2rem;
+    text-align: center; 
 }
 
 /* Skills Section */
