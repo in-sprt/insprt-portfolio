@@ -8,8 +8,8 @@
     <link rel="icon" type="image/x-icon" href="/portfolio/images/x-icon/favicon.ico">
     <link rel="stylesheet" href="style.css"> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
@@ -109,43 +109,32 @@
 <section id="portfolio">
     <div class="container">
         <h2>Портфолио</h2>
+
+        <!-- Фильтры -->
+        <div class="portfolio-filters">
+            <button class="filter-button active" data-filter="all">Все</button>
+            <button class="filter-button" data-filter="interior">Интерьерный дизайн</button>
+            <button class="filter-button" data-filter="graphic">Графический дизайн</button>
+            <button class="filter-button" data-filter="3d">3D-визуализация</button>
+            <!-- Добавьте другие фильтры по аналогии -->
+        </div>
+
         <div class="portfolio-grid">
-
-            <div class="portfolio-category">
-                <h3>Интерьерный дизайн</h3>
-                <div class="portfolio-items">
-                    <div class="portfolio-item">
-                        <a href="images/portfolio/interior/project1.jpg" data-lightbox="interior" data-title="Название проекта 1 - Интерьерный дизайн">
-                            <img src="images/portfolio/interior/project1.jpg" alt="Название проекта 1">
-                            <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Название проекта 1</h3>
-                                <p class="portfolio-category">Интерьерный дизайн</p>
-                                <p class="portfolio-description">Краткое описание проекта. Например, разработка дизайна интерьера гостиной в современном стиле с использованием натуральных материалов.</p>
-                                <i class="fas fa-search-plus portfolio-icon"></i> 
-                            </div>
-                        </a>
+            <!-- Работы -->
+            <div class="portfolio-item" data-category="interior">
+                <a href="images/portfolio/interior/project1.jpg" data-fancybox="gallery"> 
+                    <img src="images/portfolio/interior/project1.jpg" alt="Название проекта 1">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Название проекта 1</h3>
+                        <p class="portfolio-category">Интерьерный дизайн</p>
+                        <p class="portfolio-description">Краткое описание проекта. Например, разработка дизайна интерьера гостиной в современном стиле с использованием натуральных материалов.</p>
                     </div>
-                    <!-- Добавьте блоки для других проектов в категории "Интерьерный дизайн" по аналогии -->
-                </div>
+                </a>
             </div>
-
-            <div class="portfolio-category">
-                <h3>Графический дизайн</h3>
-                <div class="portfolio-items">
-                    <div class="portfolio-item">
-                        <a href="images/portfolio/graphic/project1.jpg" data-lightbox="graphic" data-title="Название проекта 1 - Графический дизайн">
-                            <img src="images/portfolio/graphic/project1.jpg" alt="Название проекта 1">
-                            <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Название проекта 1</h3>
-                                <p class="portfolio-category">Графический дизайн</p>
-                                <p class="portfolio-description">Краткое описание проекта. Например, разработка логотипа и фирменного стиля для кофейни.</p>
-                                <i class="fas fa-search-plus portfolio-icon"></i> 
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Добавьте блоки для других проектов в категории "Графический дизайн" по аналогии -->
-                </div>
-            </div>
+            <!-- Добавьте другие работы по аналогии -->
+        </div>
+    </div>
+</section>
 
             <!-- Добавьте блоки для других категорий портфолио по аналогии -->
 
