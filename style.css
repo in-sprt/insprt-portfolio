@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #212121; /* Темно-серый */
-    --secondary-color: #f2f2f2; /* Светло-серый */
-    --accent-color: #424242; /*  Измененный  серый  */
+    --primary-color: #212121; /*  Темно-серый  */
+    --secondary-color: #f2f2f2; /*  Светло-серый  */
+    --accent-color: #303030; /*  Темно-серый  для  контраста  */ 
     --text-color: var(--secondary-color); 
     --bg-color: var(--primary-color); 
 }
