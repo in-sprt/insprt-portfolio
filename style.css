@@ -162,7 +162,110 @@ nav ul li a:hover {
 }
 
 
-/*  Стили  для  остальных  секций  будут  добавлены  в  следующих  шагах  */
+/* About Section */
+#about {
+    padding: 80px 0; 
+    background-color: var(--bg-color);
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /*  Добавляем  пространство  между  изображением  и  текстом  */
+}
+
+.about-image {
+    flex: 1;
+    max-width: 400px; /*  Ограничиваем  ширину  изображения  */
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 2; /*  Делаем  блок  с  текстом  больше  */
+    color: var(--text-color);
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Media Queries (About Section) */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /*  Располагаем  изображение  и  текст  друг  под  другом  */
+    }
+
+    .about-image {
+        max-width: 100%; /*  Изображение  занимает  всю  ширину  */
+        margin-bottom: 30px;
+    }
+}
+
+/* Services Section */
+#services {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+}
+
+#services h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*  Адаптивная  сетка  */
+    gap: 30px;
+}
+
+.service-item {
+    background-color: var(--accent-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.service-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
