@@ -80,78 +80,62 @@ nav ul li a:hover {
 
 /* Hero section */
 .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden; /* Для корректной работы параллакса */
-}
-
-.hero-bg {
-  background-image: url("images/hero-bg.jpg"); /* Путь к вашему изображению */
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Фон под контентом */
-  background-attachment: fixed; /* Фиксируем для параллакса */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(45deg, var(--bg-color), var(--accent-color)); 
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 20px; /* Отступы для контента */
+    position: relative;
+    z-index: 1;
 }
 
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 4.5rem;
-  margin-bottom: 1rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: transparent; /* Цвет текста прозрачный */
-  background: linear-gradient(to right, #333333, #f2f2f2); /* Градиент */
-  -webkit-background-clip: text; /* Обрезаем градиент по тексту */
-  background-clip: text; /* Обрезаем градиент по тексту */
-  animation: gradientAnimation 5s linear infinite; /* Анимация */
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-color); 
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
-  color: var(--secondary-color);
-  margin-bottom: 10px; 
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px; 
 }
 
 .hero-description {
-  font-size: 1.2rem;
-  color: var(--text-color);
-  margin-bottom: 20px; 
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 20px; 
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-buttons {
-  display: flex; 
-  justify-content: center;
-  gap: 20px; 
+    display: flex; 
+    justify-content: center;
+    gap: 20px; 
+}
+
+.hero-image {
+    background-image: url("images/hero-bg.jpg"); /* Путь к фоновому изображению */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5; /* Прозрачность фонового изображения */
+    z-index: -1; /* Располагаем фоновое изображение под контентом */
 }
 
 /* Button styles */
