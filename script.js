@@ -32,7 +32,7 @@ form.addEventListener('submit', (event) => {
   submitButton.disabled = true;
   submitButton.textContent = 'Отправка...'; // Изменяем текст кнопки
 
-  // Отправляем данные
+ // Отправляем данные
   fetch(formUrl, {
     method: 'POST',
     body: formData,
@@ -41,26 +41,33 @@ form.addEventListener('submit', (event) => {
       if (response.ok) {
         //  Показываем сообщение об успехе
         const successMessage = document.querySelector('.success-message');
-        form.style.display = 'none'; // Скрываем форму
         successMessage.style.display = 'flex'; // Показываем сообщение
         successMessage.classList.add('show'); // Добавляем класс для анимации
 
-        // Запись в cookies (защита от спама)
+        // Скрываем форму после завершения анимации
+        form.addEventListener('transitionend', () => {
+          form.style.display = 'none';
+        }, { once: true }); //  Сработает только один раз
+        form.style.opacity = 0; // Запускаем анимацию скрытия
+
+        // Запись в cookies и установка флага
         document.cookie = "formSubmitted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; 
+        formSent = true; //  Устанавливаем флаг
       } else {
         // ... (обработка ошибки) ...
       }
-    });
+    })
+    .finally(() => {
+        // Возвращаем кнопку отправки в активное состояние
+        submitButton.disabled = false;
+        submitButton.textContent = 'Отправить';
+    }); 
 });
 
-// Проверка cookies при загрузке страницы
+// Проверка cookies и флага при загрузке страницы
 window.onload = () => {
-  if (document.cookie.indexOf("formSubmitted=true") != -1) {
-    const form = document.getElementById('my-form');
-    const successMessage = document.querySelector('.success-message');
-    form.style.display = 'none'; // Скрываем форму
-    successMessage.style.display = 'flex'; // Показываем сообщение
-    successMessage.classList.add('show'); // Добавляем класс для анимации
+  if (document.cookie.indexOf("formSubmitted=true") != -1 || formSent) {
+    // ... (скрытие формы, показ сообщения) ...
   }
 };
 
@@ -68,8 +75,8 @@ window.onload = () => {
 const inputs = document.querySelectorAll('.form-group input, .form-group textarea');
 inputs.forEach(input => {
   input.addEventListener('focus', () => {
-    input.style.backgroundColor = var(--bg-color); // Возвращаем цвет фона
-    input.style.color = var(--text-color); // Возвращаем цвет текста
+    input.style.backgroundColor = var(--bg-color) + ' !important'; // Возвращаем цвет фона
+    input.style.color = var(--text-color) + ' !important'; // Возвращаем цвет текста
   });
 });
 
