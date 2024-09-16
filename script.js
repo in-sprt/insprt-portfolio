@@ -68,59 +68,62 @@ Fancybox.bind("[data-fancybox='gallery']", {
 
 // --- ФОРМА ОБРАТНОЙ СВЯЗИ ---
 
-// формы
 const form = document.getElementById('my-form');
-const submitButton = form.querySelector('button[type="submit"]'); 
-let formSent = false; 
+const submitButton = form.querySelector('button[type="submit"]');
+let formSent = false;
 
 form.addEventListener('submit', (event) => {
-  event.preventDefault();  
+  event.preventDefault();
 
   if (formSent) {
-    return; 
+    return; // Форма уже отправлена, ничего не делаем
   }
 
   const formData = new FormData(form);
-  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeEEBv67u0q6N0li1Py1a3hDQTfyxY8ZrgImF44ldGv_7YzKg/formResponse';
+  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeEEBv67u0q6N0li1Py1a3hDQTfyxY8ZrgImF44ldGv_7YzKg/formResponse'; //  <-  Вставить свой URL
 
+  // Визуальный отклик:
   submitButton.disabled = true;
-  submitButton.textContent = 'Отправка...'; 
+  submitButton.textContent = 'Отправка...';
 
   // Отправляем данные с помощью jQuery
   $.ajax({
     url: formUrl,
-    type: "POST", 
+    type: "POST",
     data: formData,
-    processData: false, 
-    contentType: false, 
+    processData: false,
+    contentType: false,
     success: function(response) {
         const successMessage = document.querySelector('.success-message');
-        successMessage.style.display = 'flex'; 
-        successMessage.classList.add('show'); 
+        successMessage.style.display = 'flex';
+        successMessage.classList.add('show');
 
+        // Скрываем форму после завершения анимации
         form.addEventListener('transitionend', () => {
           form.style.display = 'none';
-        }, { once: true }); 
+        }, { once: true });
         form.style.opacity = 0; 
 
-        document.cookie = "formSubmitted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; 
-        formSent = true; 
+        // Запись cookie и установка флага
+        document.cookie = "formSubmitted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        formSent = true;
     },
     error: function(error) {
         console.error('Ошибка при отправке формы:', error);
         alert('Ошибка при отправке. Попробуйте позже.');
         submitButton.disabled = false;
-        submitButton.textContent = 'Отправить';
+        submitButton.textContent = 'Отправить'; 
     }
   });
 });
 
+// Проверка cookie при загрузке страницы
 window.onload = () => {
   if (document.cookie.indexOf("formSubmitted=true") != -1 || formSent) {
     const form = document.getElementById('my-form');
     const successMessage = document.querySelector('.success-message');
     form.style.display = 'none';
-    successMessage.style.display = 'flex'; 
-    successMessage.classList.add('show'); 
+    successMessage.style.display = 'flex';
+    successMessage.classList.add('show');
   }
 };
