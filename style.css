@@ -688,9 +688,36 @@ nav ul li a:hover {
 }
 
 .success-message {
-  text-align: center;
-  font-size: 1.5rem;
-  color: var(--secondary-color); /* Или ваш цвет */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;  /* Занимаем всю высоту блока .contact-form */
+    background-color: var(--accent-color); /* Цвет фона */
+    padding: 40px;
+    border-radius: 10px;
+    opacity: 0;  /*  Изначально скрыт  */
+    transition: opacity 0.5s ease;
+    position: absolute; /* Позиционируем поверх формы */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.success-message.show {
+    opacity: 1; /* Показываем с анимацией */
+}
+
+.success-icon {
+    font-size: 3rem;
+    color: var(--secondary-color); /* Цвет иконки */
+    margin-bottom: 20px;
+}
+
+.success-text {
+    font-size: 1.2rem;
+    color: var(--text-color); /* Цвет текста */
 }
 
 /* Media Queries (Contact Section) */
