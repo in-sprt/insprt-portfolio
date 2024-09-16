@@ -11,28 +11,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Обработка формы обратной связи
 const form = document.getElementById('my-form');
+let formSubmitted = false; // Флаг для отслеживания отправки
 
 form.addEventListener('submit', (event) => {
-  event.preventDefault(); // Предотвращаем стандартную отправку
+  event.preventDefault();
 
-  // Собираем данные
+  if (formSubmitted) {
+    alert('Вы уже отправили форму. Спасибо!');
+    return; // Прекращаем выполнение, если форма уже отправлена
+  }
+
   const formData = new FormData(form);
+  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeEEBv67u0q6N0li1Py1a3hDQTfyxY8ZrgImF44ldGv_7YzKg/formResponse'; //  <-  ЗАМЕНИТЬ НА СВОЙ URL
 
-  // URL вашей Google Forms (из режима редактирования, 
-  //  ОБЯЗАТЕЛЬНО ЗАМЕНИТЬ НА СВОЙ!)
-  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeEEBv67u0q6N0li1Py1a3hDQTfyxY8ZrgImF44ldGv_7YzKg/formResponse'; 
+  // Показываем сообщение о загрузке
+  const submitButton = document.querySelector('#my-form button[type="submit"]');
+  submitButton.textContent = 'Отправка...';
+  submitButton.disabled = true; 
 
-  // Отправляем данные
   fetch(formUrl, {
     method: 'POST',
     body: formData,
   })
     .then(response => {
       if (response.ok) {
-        alert('Спасибо! Ваше сообщение отправлено.');
-        form.reset(); // Очищаем форму
+        // Показываем сообщение об успехе
+        submitButton.textContent = 'Отправлено!';
+        formSubmitted = true; // Устанавливаем флаг отправки
       } else {
+        // Показываем сообщение об ошибке
         alert('Ошибка при отправке. Попробуйте позже.');
+        submitButton.textContent = 'Отправить';
+        submitButton.disabled = false;
       }
     });
 });
