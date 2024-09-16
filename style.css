@@ -547,6 +547,36 @@ nav ul li a:hover {
     border-color: var(--secondary-color);
 }
 
+/* Footer */
+footer {
+    padding: 40px 0;
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links a {
+    font-size: 1.8rem;
+    color: var(--secondary-color); 
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color); 
+}
+
 /* Media Queries (Contact Section) */
 @media (max-width: 768px) {
     .contact-info {
