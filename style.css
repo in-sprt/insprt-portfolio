@@ -443,9 +443,7 @@ nav ul li a:hover {
 }
 
 #skills h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--text-color);
+    /* Стили для h2 уже определены в общих стилях */
 }
 
 .skills-container {
@@ -487,6 +485,13 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
+/* Media Queries (Skills Section) */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr; /*  Одна  колонка  на  мобильных  устройствах  */
+    }
+}
+
 /* Testimonials Section */
 #testimonials {
     padding: 80px 0;
@@ -494,14 +499,15 @@ nav ul li a:hover {
 }
 
 #testimonials h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--text-color);
+    /* Стили для h2 уже определены в общих стилях */
 }
 
 .testimonials-slider {
-    /*  Здесь  будут  стили  для  слайдера  отзывов  */
-    /*  Вам  потребуется  выбрать  и  подключить  библиотеку  для  слайдера,  например,  Swiper  или  Owl  Carousel  */
+    /*  Основные  стили  для  слайдера  будут  заданы  библиотекой  Swiper  */
+    /*  Здесь  мы  можем  настроить  дополнительные  стили,  например  */
+    width: 100%;
+    max-width: 800px; /*  Ограничиваем  максимальную  ширину  слайдера  */
+    margin: 0 auto; 
 }
 
 .testimonial-item {
@@ -526,6 +532,15 @@ nav ul li a:hover {
 
 .testimonial-author::before {
     content: "- "; /*  Добавляем  тире  перед  именем  автора  */
+}
+
+/*  Стили  для  пагинации  Swiper  */
+.swiper-pagination-bullet {
+    background-color: var(--secondary-color); /*  Цвет  неактивного  буллета  */
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--accent-color); /*  Цвет  активного  буллета  */
 }
 
 /* Contact Section */
