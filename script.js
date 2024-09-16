@@ -28,3 +28,20 @@ window.addEventListener('scroll', () => {
     header.classList.remove('scrolled');
   }
 });
+
+// Анимация появления элементов при прокрутке (опционально)
+const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+function checkAnimation() {
+  animatedElements.forEach(element => {
+    const elementTop = element.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (elementTop < windowHeight * 0.8) { // 80% экрана
+      element.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', checkAnimation);
+checkAnimation(); // Проверяем анимацию при загрузке страницы 
