@@ -721,6 +721,11 @@ nav ul li a:hover {
     color: var(--text-color); /* Цвет текста */
 }
 
+.my-input {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important; 
+}
+
 /* Media Queries (Contact Section) */
 @media (max-width: 768px) {
     .contact-info {
