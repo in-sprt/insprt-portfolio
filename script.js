@@ -66,6 +66,8 @@ Fancybox.bind("[data-fancybox='gallery']", {
   // Опции Fancybox (при необходимости)
 });
 
+// ... (код для плавного скролла, Swiper, parallax, фильтрации портфолио, Fancybox) ...
+
 // --- ФОРМА ОБРАТНОЙ СВЯЗИ ---
 
 const form = document.getElementById('my-form');
@@ -76,45 +78,37 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   if (formSent) {
-    return; // Форма уже отправлена, ничего не делаем
+    return;
   }
-
-  const formData = new FormData(form);
-  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeEEBv67u0q6N0li1Py1a3hDQTfyxY8ZrgImF44ldGv_7YzKg/formResponse'; //  <-  Вставить свой URL
 
   // Визуальный отклик:
   submitButton.disabled = true;
   submitButton.textContent = 'Отправка...';
 
-  // Отправляем данные с помощью jQuery
-  $.ajax({
-    url: formUrl,
-    type: "POST",
-    data: formData,
-    processData: false,
-    contentType: false,
-    success: function(response) {
-        const successMessage = document.querySelector('.success-message');
-        successMessage.style.display = 'flex';
-        successMessage.classList.add('show');
+  // Имитация задержки отправки
+  setTimeout(() => {
+    // Показываем сообщение об успехе
+    const successMessage = document.querySelector('.success-message');
+    successMessage.style.display = 'flex';
+    successMessage.classList.add('show');
 
-        // Скрываем форму после завершения анимации
-        form.addEventListener('transitionend', () => {
-          form.style.display = 'none';
-        }, { once: true });
-        form.style.opacity = 0; 
+    // Скрываем форму после завершения анимации
+    form.addEventListener('transitionend', () => {
+      form.style.display = 'none';
+    }, { once: true });
+    form.style.opacity = 0; 
 
-        // Запись cookie и установка флага
-        document.cookie = "formSubmitted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-        formSent = true;
-    },
-    error: function(error) {
-        console.error('Ошибка при отправке формы:', error);
-        alert('Ошибка при отправке. Попробуйте позже.');
-        submitButton.disabled = false;
-        submitButton.textContent = 'Отправить'; 
-    }
-  });
+    // Запись cookie и установка флага
+    document.cookie = "formSubmitted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    formSent = true;
+
+    // Сбрасываем форму
+    form.reset();
+
+    // Возвращаем кнопку в исходное состояние
+    submitButton.disabled = false;
+    submitButton.textContent = 'Отправить';
+  }, 1000); // Задержка 1 секунда (1000 миллисекунд)
 });
 
 // Проверка cookie при загрузке страницы
