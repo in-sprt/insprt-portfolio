@@ -208,21 +208,19 @@ nav ul li a:hover {
 }
 
 #about h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--text-color);
+    /*  Стили  для  h2  уже  определены  в  общих  стилях  */
 }
 
 .about-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px; /*  Добавляем  пространство  между  изображением  и  текстом  */
+    gap: 40px;
 }
 
 .about-image {
     flex: 1;
-    max-width: 400px; /*  Ограничиваем  ширину  изображения  */
+    max-width: 400px;
 }
 
 .about-image img {
@@ -233,7 +231,7 @@ nav ul li a:hover {
 }
 
 .about-text {
-    flex: 2; /*  Делаем  блок  с  текстом  больше  */
+    flex: 2;
     color: var(--text-color);
 }
 
@@ -246,11 +244,11 @@ nav ul li a:hover {
 /* Media Queries (About Section) */
 @media (max-width: 768px) {
     .about-content {
-        flex-direction: column; /*  Располагаем  изображение  и  текст  друг  под  другом  */
+        flex-direction: column;
     }
 
     .about-image {
-        max-width: 100%; /*  Изображение  занимает  всю  ширину  */
+        max-width: 100%;
         margin-bottom: 30px;
     }
 }
@@ -262,14 +260,12 @@ nav ul li a:hover {
 }
 
 #services h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--text-color);
+    /* Стили для h2 уже определены в общих стилях */
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*  Адаптивная  сетка  */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивная сетка */
     gap: 30px;
 }
 
@@ -304,6 +300,13 @@ nav ul li a:hover {
     font-size: 1rem;
     color: var(--text-color);
     line-height: 1.6;
+}
+
+/* Media Queries (Services Section) */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /*  Одна  колонка  на  мобильных  устройствах  */
+    }
 }
 
 /* Portfolio Section */
