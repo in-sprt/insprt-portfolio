@@ -71,15 +71,6 @@ window.onload = () => {
   }
 };
 
-// Решение проблемы автозаполнения
-const inputs = document.querySelectorAll('.form-group input, .form-group textarea');
-inputs.forEach(input => {
-  input.addEventListener('focus', () => {
-    input.style.backgroundColor = var(--bg-color) + ' !important'; // Возвращаем цвет фона
-    input.style.color = var(--text-color) + ' !important'; // Возвращаем цвет текста
-  });
-});
-
 //  Инициализация  Swiper
 var swiper = new Swiper('.testimonials-slider', {
     slidesPerView: 1, 
