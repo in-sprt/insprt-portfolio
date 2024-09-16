@@ -12,7 +12,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://forms.yandex.ru/_static/embed.js"></script></head>
 <body>
     <header>
         <div class="container">
@@ -221,15 +220,28 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <p>Казахстан</p>
             </div>
-            <!-- Добавьте ссылки на соцсети, если нужно -->
         </div>
 
-        <!-- Блок с Яндекс.Формой -->
-<div class="yandex-form">
-    <iframe src="https://forms.yandex.ru/u/66e7ee03f47e73cffd2f7e50/?iframe=1" frameborder="0" name="ya-form-66e7ee03f47e73cffd2f7e50" width="650"></iframe>
+        <!-- Форма обратной связи -->
+        <div class="contact-form">
+            <form action="#" method="post" id="contact-form"> 
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Ваш email:</label>
+                    <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ваше сообщение:</label>
+                    <textarea id="message" name="message" placeholder="Напишите ваше сообщение" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+        </div>
     </div>
 </section>
-
 <footer>
     <div class="container">
         <p>© 2023 Владимир Ефанов</p>
