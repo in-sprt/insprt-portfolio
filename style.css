@@ -657,7 +657,6 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
     position: relative; /*  Для позиционирования success-message */
-    overflow: hidden; /*  Чтобы скрыть форму за success-message */
 }
 
 .form-group {
@@ -704,14 +703,13 @@ nav ul li a:hover {
     text-align: center;
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: absolute; /* Позиционируем поверх формы */
     top: 0;
     left: 0;
     background-color: var(--accent-color);
     padding: 40px;
     border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    display: none; /* Изначально скрыт */
 }
 
 .success-message.show {
