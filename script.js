@@ -10,23 +10,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Обработка формы обратной связи
-const contactForm = document.getElementById('contact-form');
+const form = document.getElementById('my-form');
 
-contactForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Предотвращаем стандартную отправку
 
-    // Получаем данные из формы
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+  // Собираем данные
+  const formData = new FormData(form);
 
-    // ... (код для отправки данных на сервер) ...
+  // URL вашей Google Forms (из режима редактирования, 
+  //  ОБЯЗАТЕЛЬНО ЗАМЕНИТЬ НА СВОЙ!)
+  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeEEBv67u0q6N0li1Py1a3hDQTfyxY8ZrgImF44ldGv_7YzKg/formResponse'; 
 
-    // Очищаем поля формы
-    contactForm.reset();
-
-    // Выводим сообщение об успешной отправке
-    alert('Спасибо! Ваше сообщение отправлено.');
+  // Отправляем данные
+  fetch(formUrl, {
+    method: 'POST',
+    body: formData,
+  })
+    .then(response => {
+      if (response.ok) {
+        alert('Спасибо! Ваше сообщение отправлено.');
+        form.reset(); // Очищаем форму
+      } else {
+        alert('Ошибка при отправке. Попробуйте позже.');
+      }
+    });
 });
 
 //  Инициализация  Swiper
