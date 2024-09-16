@@ -4,7 +4,7 @@
 :root {
     --primary-color: #212121; /* Темно-серый */
     --secondary-color: #f2f2f2; /* Светло-серый */
-    --accent-color: #e0e0e0; /* Серый */
+    --accent-color: #424242; /*  Измененный  серый  */
     --text-color: var(--secondary-color); 
     --bg-color: var(--primary-color); 
 }
