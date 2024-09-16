@@ -15,56 +15,58 @@
 
     <header>
         <div class="container">
-            <nav>
+            <nav class="navbar">
                 <div class="logo">VE</div> 
-                <ul>
-                    <li><a href="#home">Главная</a></li>
-                    <li><a href="#about">Обо мне</a></li>
-                    <li><a href="#portfolio">Портфолио</a></li>
-                    <li><a href="#skills">Навыки</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Главная</a></li>
+                    <li><a href="#about" class="nav-link">Обо мне</a></li>
+                    <li><a href="#portfolio" class="nav-link">Портфолио</a></li>
+                    <li><a href="#skills" class="nav-link">Навыки</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Владимир Ефанов</h1>
-        <p class="hero-subtitle">Графический и Интерьерный Дизайнер</p>
-        <p class="hero-description">Создаю уникальные и функциональные интерьеры, которые отражают вашу индивидуальность.</p> 
-        <div class="hero-buttons">
-            <a href="#portfolio" class="btn">Посмотреть портфолио</a>
-            <a href="#contact" class="btn">Связаться со мной</a>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Владимир Ефанов</h1>
+            <p class="hero-subtitle">Графический и Интерьерный Дизайнер</p>
+            <p class="hero-description">Создаю уникальные и функциональные пространства, 
+                визуальные решения и digital-контент. </p> 
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn">Посмотреть портфолио</a>
+                <a href="#contact" class="btn">Связаться со мной</a>
+            </div>
         </div>
-    </div>
-    <div class="hero-image"> </div> 
-</section>
+        <div class="hero-image">
+            <div class="hero-overlay"></div> </div> 
+    </section>
 
     <section id="about">
         <div class="container">
-            <h2>Обо мне</h2>
+            <h2 class="section-title">Обо мне</h2>
             <div class="about-content">
-<div class="about-text">
-    <p>Привет! Я Владимир, графический и интерьерный дизайнер с 5-летним опытом 
-        создания стильных и функциональных пространств и визуальных решений. 
-        Моя страсть - преобразовывать идеи в реальность, используя принципы 
-        дизайна, эргономики и эстетики. Я стремлюсь создавать гармоничные и 
-        вдохновляющие окружения, которые отражают индивидуальность клиента 
-        и соответствуют его потребностям. </p>
-
-    <p>В дизайне мне особенно нравится работать в стилях современного минимализма 
-        и контемпорари. Сложные, насыщенные оттенки, такие как пыльно-зелёный 
-        и бордовый, привлекают меня больше всего, но не отказываюсь и от классики, 
-        когда нужно создать что-то проверенное временем.</p>
-
-    <p>Мой ник в соцсетях “insprt" отражает моё стремление к постоянному 
-        вдохновению и внутреннему творческому росту. Если вам нужен дизайн, 
-        который отражает вашу идентичность и создает атмосферу, рад пригласить 
-        вас к сотрудничеству.</p>
-</div>
                 <div class="about-image">
                     <img src="images/profile.jpg" alt="Владимир Ефанов"> 
+                </div>
+                <div class="about-text">
+                    <p>Привет! Я Владимир, графический и интерьерный дизайнер с 5-летним опытом 
+                        создания стильных и функциональных пространств и визуальных решений. 
+                        Моя страсть - преобразовывать идеи в реальность, используя принципы 
+                        дизайна, эргономики и эстетики. Я стремлюсь создавать гармоничные и 
+                        вдохновляющие окружения, которые отражают индивидуальность клиента 
+                        и соответствуют его потребностям. </p>
+                
+                    <p>В дизайне мне особенно нравится работать в стилях современного минимализма 
+                        и контемпорари. Сложные, насыщенные оттенки, такие как пыльно-зелёный 
+                        и бордовый, привлекают меня больше всего, но не отказываюсь и от классики, 
+                        когда нужно создать что-то проверенное временем.</p>
+                
+                    <p>Мой ник в соцсетях “insprt" отражает моё стремление к постоянному 
+                        вдохновению и внутреннему творческому росту. Если вам нужен дизайн, 
+                        который отражает вашу идентичность и создает атмосферу, рад пригласить 
+                        вас к сотрудничеству.</p>
                 </div>
             </div>
         </div>
@@ -72,92 +74,95 @@
 
     <section id="portfolio">
         <div class="container">
-            <h2>Портфолио</h2>
-<div class="portfolio-grid">
-    <div class="portfolio-item">
-        <a href="images/portfolio/project1.jpg" data-lightbox="portfolio" data-title="Название проекта 1 - Интерьерный дизайн">
-            <img src="images/portfolio/project1.jpg" alt="Название проекта 1">
-            <div class="portfolio-overlay">
-                <h3 class="portfolio-title">Название проекта 1</h3>
-                <p class="portfolio-category">Интерьерный дизайн</p>
-                <p class="portfolio-description">Описание проекта 1</p>
-                <i class="fas fa-search-plus portfolio-icon"></i> 
+            <h2 class="section-title">Портфолио</h2>
+            <div class="portfolio-grid">
+                <!-- Интерьерный дизайн -->
+                <div class="portfolio-item">
+                    <a href="images/portfolio/project1.jpg" data-lightbox="interior" data-title="Название проекта 1 - Интерьерный дизайн">
+                        <img src="images/portfolio/project1.jpg" alt="Название проекта 1">
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Название проекта 1</h3>
+                            <p class="portfolio-category">Интерьерный дизайн</p>
+                            <p class="portfolio-description">Описание проекта 1</p>
+                            <i class="fas fa-search-plus portfolio-icon"></i> 
+                        </div>
+                    </a>
+                </div>
+                <!-- Графический дизайн -->
+                <div class="portfolio-item">
+                    <a href="images/portfolio/project2.jpg" data-lightbox="graphic" data-title="Название проекта 2 - Графический дизайн">
+                        <img src="images/portfolio/project2.jpg" alt="Название проекта 2">
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Название проекта 2</h3>
+                            <p class="portfolio-category">Графический дизайн</p>
+                            <p class="portfolio-description">Описание проекта 2</p>
+                            <i class="fas fa-search-plus portfolio-icon"></i> 
+                        </div>
+                    </a>
+                </div>
+                <!-- 3D визуализация -->
+                <div class="portfolio-item">
+                    <a href="images/portfolio/project3.jpg" data-lightbox="3d" data-title="Название проекта 3 - 3D визуализация">
+                        <img src="images/portfolio/project3.jpg" alt="Название проекта 3">
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Название проекта 3</h3>
+                            <p class="portfolio-category">3D визуализация</p>
+                            <p class="portfolio-description">Описание проекта 3</p>
+                            <i class="fas fa-search-plus portfolio-icon"></i> 
+                        </div>
+                    </a>
+                </div>
+                <!-- И так далее для других проектов -->
             </div>
-        </a>
-    </div>
-    <div class="portfolio-item">
-        <a href="images/portfolio/project2.jpg" data-lightbox="portfolio" data-title="Название проекта 2 - Графический дизайн">
-            <img src="images/portfolio/project2.jpg" alt="Название проекта 2">
-            <div class="portfolio-overlay">
-                <h3 class="portfolio-title">Название проекта 2</h3>
-                <p class="portfolio-category">Графический дизайн</p>
-                <p class="portfolio-description">Описание проекта 2</p>
-                <i class="fas fa-search-plus portfolio-icon"></i> 
-            </div>
-        </a>
-    </div>
-    <div class="portfolio-item">
-        <a href="images/portfolio/project3.jpg" data-lightbox="portfolio" data-title="Название проекта 3 - 3D визуализация">
-            <img src="images/portfolio/project3.jpg" alt="Название проекта 3">
-            <div class="portfolio-overlay">
-                <h3 class="portfolio-title">Название проекта 3</h3>
-                <p class="portfolio-category">3D визуализация</p>
-                <p class="portfolio-description">Описание проекта 3</p>
-                <i class="fas fa-search-plus portfolio-icon"></i> 
-            </div>
-        </a>
-    </div>
-    <!--  И  так  далее  для  других  проектов  -->
-</div>
         </div>
     </section>
 
     <section id="skills">
         <div class="container">
-            <h2>Мои навыки</h2>
-<div class="skills-container">
-    <div class="skill-item">
-        <i class="skill-icon fas fa-palette"></i> 
-        <h3 class="skill-title">Графический дизайн</h3>
-        <p class="skill-description">Разработка логотипов, брендбуков, иллюстраций, макетов для печати и веб.</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill-icon fas fa-couch"></i> 
-        <h3 class="skill-title">Интерьерный дизайн</h3>
-        <p class="skill-description">Планировка пространства, подбор мебели и материалов, 3D-визуализация.</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill-icon fas fa-vector-square"></i> 
-        <h3 class="skill-title">AutoCAD</h3>
-        <p class="skill-description">Создание чертежей и планов помещений.</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill-icon fas fa-cubes"></i> 
-        <h3 class="skill-title">3Ds Max</h3>
-        <p class="skill-description">Создание реалистичных 3D-моделей и визуализаций интерьеров.</p>
-    </div> 
-    <div class="skill-item">
-        <i class="skill-icon fas fa-camera-retro"></i> 
-        <h3 class="skill-title">Фотография</h3>
-        <p class="skill-description">Профессиональная фотосъемка интерьеров и объектов.</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill-icon fas fa-video"></i> 
-        <h3 class="skill-title">Видеомонтаж</h3>
-        <p class="skill-description">Создание видеороликов и презентаций.</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill-icon fas fa-brain"></i> 
-        <h3 class="skill-title">AI-искусство</h3>
-        <p class="skill-description">Генерация изображений и дизайн с помощью нейросетей.</p>
-    </div>
-</div>
+            <h2 class="section-title">Мои навыки</h2>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <i class="skill-icon fas fa-palette"></i> 
+                    <h3 class="skill-title">Графический дизайн</h3>
+                    <p class="skill-description">Разработка логотипов, брендбуков, иллюстраций, макетов для печати и веб.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="skill-icon fas fa-couch"></i> 
+                    <h3 class="skill-title">Интерьерный дизайн</h3>
+                    <p class="skill-description">Планировка пространства, подбор мебели и материалов, 3D-визуализация.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="skill-icon fas fa-vector-square"></i> 
+                    <h3 class="skill-title">AutoCAD</h3>
+                    <p class="skill-description">Создание чертежей и планов помещений.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="skill-icon fas fa-cubes"></i> 
+                    <h3 class="skill-title">3Ds Max</h3>
+                    <p class="skill-description">Создание реалистичных 3D-моделей и визуализаций интерьеров.</p>
+                </div> 
+                <div class="skill-item">
+                    <i class="skill-icon fas fa-camera-retro"></i> 
+                    <h3 class="skill-title">Фотография</h3>
+                    <p class="skill-description">Профессиональная фотосъемка интерьеров и объектов.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="skill-icon fas fa-video"></i> 
+                    <h3 class="skill-title">Видеомонтаж</h3>
+                    <p class="skill-description">Создание видеороликов и презентаций.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="skill-icon fas fa-brain"></i> 
+                    <h3 class="skill-title">AI-искусство</h3>
+                    <p class="skill-description">Генерация изображений и дизайн с помощью нейросетей.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
-            <h2>Контакты</h2>
+            <h2 class="section-title">Контакты</h2>
             <div class="contact-form">
                 <form>
                     <div class="form-group">
