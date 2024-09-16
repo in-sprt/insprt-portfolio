@@ -9,6 +9,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Обработка формы обратной связи
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+    // Получаем данные из формы
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // ... (код для отправки данных на сервер) ...
+
+    // Очищаем поля формы
+    contactForm.reset();
+
+    // Выводим сообщение об успешной отправке
+    alert('Спасибо! Ваше сообщение отправлено.');
+});
+
 //  Инициализация  Swiper
 var swiper = new Swiper('.testimonials-slider', {
     slidesPerView: 1, 
