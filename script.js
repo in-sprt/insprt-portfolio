@@ -140,7 +140,7 @@ Fancybox.bind("[data-fancybox='gallery']", {
 
 const form = document.getElementById('my-form');
 const submitButton = form.querySelector('button[type="submit"]');
-const successMessage = document.querySelector('.success-message'); // Объявляем successMessage здесь
+const successMessage = document.querySelector('.success-message'); 
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
