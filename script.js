@@ -19,6 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+//  Инициализация  Swiper
+var swiper = new Swiper('.testimonials-slider', {
+    slidesPerView: 1, 
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    //  Другие  настройки  Swiper
+});
+
 // Навбар (полупрозрачность при прокрутке)
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
