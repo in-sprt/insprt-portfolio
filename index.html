@@ -209,19 +209,44 @@
     </div>
 </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Контакты</h2>
-            <div class="contact-info">
-                <!--  Здесь  будет  контактная  информация,  карта  и  т.д.  -->
+<section id="contact">
+    <div class="container">
+        <h2>Контакты</h2>
+        <div class="contact-info">
+            <div class="contact-info-item">
+                <i class="fas fa-phone"></i>
+                <p>+7 706 677 13 60</p>
             </div>
-            <div class="contact-form">
-                <form>
-                    <!--  Форма  обратной  связи  -->
-                </form>
+            <div class="contact-info-item">
+                <i class="fas fa-envelope"></i>
+                <p><a href="mailto:vladimir.efanov@example.com">vladimir.efanov@example.com</a></p>
             </div>
+            <div class="contact-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Казахстан</p>
+            </div>
+            <!-- Добавьте ссылки на соцсети, если нужно -->
         </div>
-    </section>
+
+        <div class="contact-form">
+            <form action="#" method="post"> 
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Ваш email:</label>
+                    <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ваше сообщение:</label>
+                    <textarea id="message" name="message" placeholder="Напишите ваше сообщение" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+</section>
 
     <footer>
         <div class="container">
