@@ -9,6 +9,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// формы
 const form = document.getElementById('my-form');
 const submitButton = form.querySelector('button[type="submit"]'); // Получаем кнопку отправки
 let formSent = false; // Флаг, указывающий, была ли форма отправлена
@@ -36,22 +37,40 @@ form.addEventListener('submit', (event) => {
     method: 'POST',
     body: formData,
   })
-    .then(response => {
+  .then(response => {
       if (response.ok) {
-        // Показываем сообщение об успехе
-        form.innerHTML = '<p class="success-message">Спасибо! Ваше сообщение отправлено.</p>'; 
+        //  Показываем сообщение об успехе
+        const successMessage = document.querySelector('.success-message');
+        form.style.display = 'none'; // Скрываем форму
+        successMessage.style.display = 'flex'; // Показываем сообщение
+        successMessage.classList.add('show'); // Добавляем класс для анимации
 
-        // Добавляем анимацию (например, плавное исчезновение формы)
-        form.style.transition = 'opacity 0.5s ease-in-out';
-        form.style.opacity = '0';
-
-        formSent = true; // Устанавливаем флаг, что форма отправлена
+        // Запись в cookies (защита от спама)
+        document.cookie = "formSubmitted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; 
       } else {
-        alert('Ошибка при отправке. Попробуйте позже.');
-        submitButton.disabled = false;
-        submitButton.textContent = 'Отправить';
+        // ... (обработка ошибки) ...
       }
     });
+});
+
+// Проверка cookies при загрузке страницы
+window.onload = () => {
+  if (document.cookie.indexOf("formSubmitted=true") != -1) {
+    const form = document.getElementById('my-form');
+    const successMessage = document.querySelector('.success-message');
+    form.style.display = 'none'; // Скрываем форму
+    successMessage.style.display = 'flex'; // Показываем сообщение
+    successMessage.classList.add('show'); // Добавляем класс для анимации
+  }
+};
+
+// Решение проблемы автозаполнения
+const inputs = document.querySelectorAll('.form-group input, .form-group textarea');
+inputs.forEach(input => {
+  input.addEventListener('focus', () => {
+    input.style.backgroundColor = var(--bg-color); // Возвращаем цвет фона
+    input.style.color = var(--text-color); // Возвращаем цвет текста
+  });
 });
 
 //  Инициализация  Swiper
