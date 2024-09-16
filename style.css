@@ -365,27 +365,36 @@ nav ul li a:hover {
     /* Стили для h2 уже определены в общих стилях */
 }
 
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+filter-button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button.active {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+}
+
+.filter-button:hover {
+    background-color: darken(var(--accent-color), 5%);
+}
+
+/* Portfolio Grid */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
-}
-
-.portfolio-category {
-    margin-bottom: 40px; 
-}
-
-.portfolio-category h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--text-color);
-    text-align: center; 
-}
-
-.portfolio-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
@@ -394,10 +403,11 @@ nav ul li a:hover {
     overflow: hidden; 
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
 }
 
-.portfolio-item a {
-    display: block; /*  Чтобы  ссылка  занимала  всю  площадь  элемента  */
+.portfolio-item:hover {
+    transform: translateY(-5px);
 }
 
 .portfolio-item img {
@@ -440,15 +450,20 @@ nav ul li a:hover {
 .portfolio-category {
     color: var(--text-color);
     font-size: 1rem;
+    margin-bottom: 10px; /* Добавлено */
 }
 
 .portfolio-description {
-    display: none; 
     font-size: 1rem;
     color: var(--text-color);
     text-align: center; 
     padding: 10px 20px; 
     line-height: 1.6;
+    display: none; /* Скрываем описание по умолчанию */
+}
+
+.portfolio-item:hover .portfolio-description {
+    display: block; /* Показываем описание при наведении */
 }
 
 .portfolio-icon {
