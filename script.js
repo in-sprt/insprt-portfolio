@@ -57,3 +57,10 @@ function checkAnimation() {
 
 window.addEventListener('scroll', checkAnimation);
 checkAnimation(); // Проверяем анимацию при загрузке страницы 
+
+// Улучшение parallax-эффекта
+window.addEventListener('scroll', () => {
+  const parallaxBg = document.querySelector('.parallax-bg');
+  let scrollY = window.pageYOffset;
+  parallaxBg.style.backgroundPositionY = scrollY * 0.5 + 'px'; // Регулируем скорость движения фона
+});
