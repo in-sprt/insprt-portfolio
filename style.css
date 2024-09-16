@@ -369,9 +369,24 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+}/* Portfolio Section */
+#portfolio {
+    padding: 80px 0;
+    background-color: var(--bg-color);
 }
 
-filter-button {
+#portfolio h2 {
+    /* Стили для h2 уже определены в общих стилях */
+}
+
+/* Фильтры */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.filter-button {
     background-color: var(--accent-color);
     color: var(--text-color);
     border: none;
@@ -380,6 +395,8 @@ filter-button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif; /* Добавлено наследование шрифта */
+    font-weight: 500; /* Добавлено - полужирный шрифт */
 }
 
 .filter-button.active {
@@ -450,7 +467,7 @@ filter-button {
 .portfolio-category {
     color: var(--text-color);
     font-size: 1rem;
-    margin-bottom: 10px; /* Добавлено */
+    margin-bottom: 10px;
 }
 
 .portfolio-description {
@@ -464,12 +481,6 @@ filter-button {
 
 .portfolio-item:hover .portfolio-description {
     display: block; /* Показываем описание при наведении */
-}
-
-.portfolio-icon {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    margin-top: 20px; 
 }
 
 /* Media Queries (Portfolio Section) */
