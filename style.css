@@ -267,6 +267,121 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
+/* Portfolio Section */
+#portfolio {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+}
+
+#portfolio h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+}
+
+.portfolio-category {
+    margin-bottom: 40px; 
+}
+
+.portfolio-category h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block; 
+    transition: transform 0.3s ease; 
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); 
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; 
+}
+
+.portfolio-title {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.portfolio-category {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.portfolio-description {
+    display: none; 
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: center; 
+    padding: 10px 20px; 
+    line-height: 1.6;
+}
+
+.portfolio-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-top: 20px; 
+}
+
+/* Lightbox Customization */
+.lightboxOverlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox .lb-image {
+    border-radius: 10px;
+}
+
+.lightbox .lb-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--secondary-color);
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     /*  Адаптация  для  мобильных  устройств  */
