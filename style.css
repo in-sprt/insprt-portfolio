@@ -433,6 +433,47 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
+/* Testimonials Section */
+#testimonials {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+}
+
+#testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.testimonials-slider {
+    /*  Здесь  будут  стили  для  слайдера  отзывов  */
+    /*  Вам  потребуется  выбрать  и  подключить  библиотеку  для  слайдера,  например,  Swiper  или  Owl  Carousel  */
+}
+
+.testimonial-item {
+    background-color: var(--accent-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.testimonial-author::before {
+    content: "- "; /*  Добавляем  тире  перед  именем  автора  */
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     /*  Адаптация  для  мобильных  устройств  */
