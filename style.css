@@ -115,6 +115,63 @@ nav ul li a:hover {
     /*  Здесь  можно  добавить  стили  для  мобильного  меню,  например,  кнопку  "гамбургер"  */
 }
 
+
+/* Мобильное меню */
+.hamburger {
+    display: none; /* Скрываем по умолчанию на десктопе */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--secondary-color); 
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; 
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Скрываем меню за левым краем */
+        top: 0;
+        gap: 0; 
+        flex-direction: column;
+        background-color: var(--bg-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        left: 0; /* Показываем меню */
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
 /* Hero Section */
 .hero {
     min-height: 100vh; 
