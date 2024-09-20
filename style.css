@@ -737,9 +737,9 @@ nav ul li a:hover {
 
 /* Media Queries (Contact Section) */
 @media (max-width: 768px) {
-    .contact-info {
-        flex-direction: column; 
-    }
+  .contact-block {
+    flex-direction: column;
+  }
 }
 
 /* Footer */
