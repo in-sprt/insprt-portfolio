@@ -731,7 +731,6 @@ nav ul li a:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(3px); /* Размытие фона */
 }
 
 /* Форма обратной связи */
