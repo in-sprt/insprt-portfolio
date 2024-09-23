@@ -26,8 +26,8 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    max-width: 1200px; /*  Максимальная  ширина  */
+    width: 90%; /*  Относительная  ширина  */
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -209,7 +209,7 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 90%; /*  Изменено  с  max-width: 800px;  */
     margin: 0 auto;
 }
 
@@ -330,7 +330,7 @@ nav ul li a:hover {
 
 .about-image {
     flex: 1;
-    max-width: 400px;
+    max-width: 100%; /*  Изменено  с  max-width: 400px;  */
 }
 
 .about-image img {
@@ -375,15 +375,14 @@ nav ul li a:hover {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивная сетка */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /*  Изменено  с  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  */
+    gap: 20px; /*  Изменено  с  gap: 30px;  */
 }
 
 .service-item {
-    background-color: var(--accent-color);
-    padding: 30px;
+    padding: 20px; /*  Изменено  с  padding: 30px;  */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -475,8 +474,8 @@ nav ul li a:hover {
 /* Portfolio Grid */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /*  Изменено  с  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  */
+    gap: 20px; /*  Изменено  с  gap: 30px;  */
 }
 
 .portfolio-item {
@@ -585,12 +584,11 @@ nav ul li a:hover {
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 20px; /*  Изменено  с  gap: 30px;  */
 }
 
 .skill-item {
-    background-color: var(--accent-color);
-    padding: 30px;
+    padding: 20px; /*  Изменено  с  padding: 30px;  */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -636,8 +634,9 @@ nav ul li a:hover {
 
 /* Блок для контактов и формы */
 .contact-block {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    flex-direction: column; /*  Изменено  с  display: flex;  */
+    gap: 20px; /*  Изменено  с  gap: 30px;  */
 }
 
 /* Контактная информация */
@@ -691,13 +690,12 @@ nav ul li a:hover {
 
 /* Форма обратной связи */
 .contact-form {
-  background-color: rgba(33, 33, 33, 0.8); /* Полупрозрачный фон */
-  padding: 40px;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  z-index: 2; /*  Располагаем форму поверх фона  */
-  position: relative; /*  Для позиционирования success-message  */
+    padding: 30px; /*  Изменено  с  padding: 40px;  */
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: relative;
 }
 
 /*  Сообщение  об  успехе  */
