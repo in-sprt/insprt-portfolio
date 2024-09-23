@@ -33,8 +33,8 @@ var navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
     console.log("Click"); //  Вывод  в  консоль
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("show");
+    navMenu.classList.toggle("show")
     if (navMenu.classList.contains("active")) {
         console.log("Menu active"); //  Вывод  в  консоль
     }
