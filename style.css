@@ -1,10 +1,134 @@
 /* Общие стили */
 body {
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    background-color: #000; /*  Темный  фон  */
-    color: #fff; /*  Светлый  текст  */
+    background-color: #000; 
+    color: #fff; 
+    overflow-x: hidden; /*  Скрываем  горизонтальную  полосу  прокрутки  */
 }
+
+/* Стили для header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /*  Помещаем  header  над  другими  элементами  */
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; /*  Выравнивание  меню  справа  */
+    align-items: center;
+    padding: 15px 0;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+
+/* Стили для секции Hero */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /*  Для  позиционирования  фонового  изображения  */
+}
+
+.hero-content {
+    margin-bottom: 30px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 10px 0 0;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/hero-bg.jpg"); /*  Замените  на  путь  к  вашему  изображению  */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /*  Размещаем  изображение  позади  контента  */
+    filter: blur(5px); /*  Размытие  фона  */
+}
+
+/* Стили для навигационных точек */
+.hero-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-dots {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 5px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.nav-dot.active {
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+}
+
+
 
 /* Стили для секций */
 #hero, #portfolio, #about, #skills, #contact {
