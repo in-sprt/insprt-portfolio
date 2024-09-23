@@ -1,4 +1,3 @@
-"use strict";
 // Плавный скролл при клике на ссылки в меню
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -28,16 +27,12 @@ window.addEventListener('scroll', () => {
 });
 
 // Мобильное меню
-var hamburger = document.querySelector(".hamburger");
-var mobileMenu = document.querySelector(".mobile-menu");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
-    console.log("Click");
     hamburger.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
-    if (mobileMenu.classList.contains("active")) {
-        console.log("Menu active");
-    }
+    navMenu.classList.toggle("active");
 });
 
 // Закрываем меню при клике на ссылку
