@@ -1,283 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Владимир Ефанов - графический и интерьерный дизайнер. Создаю стильные и функциональные пространства и визуальные решения.">
-    <meta name="author" content="Владимир Ефанов"> <title>Владимир Ефанов - Дизайнер | Портфолио</title>
-    <link rel="icon" type="image/x-icon" href="/portfolio/images/x-icon/favicon.ico">
-    <link rel="stylesheet" href="style.css"> 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-</head> <body> 
-    <header>
-        <div class="container">
-<nav>
-    <a href="#home" class="logo">Sprtfolio</a> <ul class="nav-menu">
-        <li><a href="#about">Обо мне</a></li>
-        <li><a href="#services">Услуги</a></li>
-        <li><a href="#portfolio">Портфолио</a></li>
-        <li><a href="#skills">Навыки</a></li>
-        <li><a href="#contact">Контакты</a></li>
-    </ul>
-    <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-</nav>
-        </div>
-    </header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Владимир Ефанов - Дизайн интерьеров</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- Секция Home -->
-<section id="home">
-    <div class="cover"> 
-        <div class="cover-content">
-            <h1>Владимир Ефанов</h1>
-            <p>Дизайн интерьеров</p>
-        </div>
-        <div class="cover-image">
-            <!-- Здесь будет фоновое изображение -->
-        </div>
-        <div class="cover-nav">
-            <!-- Здесь будут навигационные точки -->
-        </div>
-    </div>
-</section>
-
-    <!-- Анимированный разделитель -->
-    <div class="animated-divider"></div>
-
-    <!-- Секция About -->
-    <section id="about">
-        <div class="container">
-            <h2>Обо мне</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/profile.jpg" alt="Владимир Ефанов - Дизайнер">
-                </div>
-                <div class="about-text">
-                    <p>Привет! Я Владимир, графический и интерьерный дизайнер с 5-летним опытом 
-                    создания стильных и функциональных пространств и визуальных решений. 
-                    Моя страсть - преобразовывать идеи в реальность, используя принципы 
-                    дизайна, эргономики и эстетики. Я стремлюсь создавать гармоничные и 
-                    вдохновляющие окружения, которые отражают индивидуальность клиента 
-                    и соответствуют его потребностям.</p>
-
-                    <p>В дизайне мне особенно нравится работать в стилях современного минимализма 
-                    и контемпорари. Сложные, насыщенные оттенки, такие как пыльно-зелёный 
-                    и бордовый, привлекают меня больше всего, но не отказываюсь и от классики, 
-                    когда нужно создать что-то проверенное временем.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <header id="header">
     
-<section id="services">
-    <div class="container">
-        <h2>Услуги</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <i class="fas fa-palette service-icon"></i>
-                <h3 class="service-title">Графический дизайн</h3>
-                <p class="service-description">Разработка логотипов, фирменного стиля, иллюстраций, 
-                    макетов для полиграфии и веб-дизайна.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-couch service-icon"></i>
-                <h3 class="service-title">Интерьерный дизайн</h3>
-                <p class="service-description">Создание функциональных и эстетичных интерьеров 
-                    жилых и коммерческих помещений, включая планировку, подбор мебели и 
-                    3D-визуализацию.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-cubes service-icon"></i>
-                <h3 class="service-title">3D-визуализация</h3>
-                <p class="service-description">Создание фотореалистичных 3D-визуализаций 
-                    интерьеров, экстерьеров и объектов, позволяющих увидеть ваш проект 
-                    еще до его реализации.</p>
-            </div>
-            <!-- Добавьте блоки для других услуг по аналогии -->
-        </div>
-    </div>
-</section>
+  </header>
 
-<section id="portfolio">
-    <div class="container">
-        <h2>Портфолио</h2>
-
-        <!-- Фильтры -->
-        <div class="portfolio-filters">
-            <button class="filter-button active" data-filter="all">Все</button>
-            <button class="filter-button" data-filter="interior">Интерьерный дизайн</button>
-            <button class="filter-button" data-filter="graphic">Графический дизайн</button>
-            <button class="filter-button" data-filter="3d">3D-визуализация</button>
-            <!-- Добавьте другие фильтры по аналогии -->
-        </div>
-
-        <div class="portfolio-grid">
-            <!-- Работы -->
-            <div class="portfolio-item" data-category="interior">
-                <a href="images/portfolio/interior/project1.jpg" data-fancybox="gallery"> 
-                    <img src="images/portfolio/interior/project1.jpg" alt="Название проекта 1">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Название проекта 1</h3>
-                        <p class="portfolio-category">Интерьерный дизайн</p>
-                        <p class="portfolio-description">Краткое описание проекта. Например, разработка дизайна интерьера гостиной в современном стиле с использованием натуральных материалов.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-item" data-category="interior">
-                <a href="images/portfolio/interior/project2.jpg" data-fancybox="gallery"> 
-                    <img src="images/portfolio/interior/project2.jpg" alt="Название проекта 2">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Название проекта 2</h3>
-                        <p class="portfolio-category">Интерьерный дизайн</p>
-                        <p class="portfolio-description">Краткое описание проекта. Например, разработка дизайна интерьера гостиной в современном стиле с использованием натуральных материалов.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-item" data-category="interior">
-                <a href="images/portfolio/interior/project3.jpg" data-fancybox="gallery"> 
-                    <img src="images/portfolio/interior/project3.jpg" alt="Название проекта 3">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Название проекта 3</h3>
-                        <p class="portfolio-category">Интерьерный дизайн</p>
-                        <p class="portfolio-description">Краткое описание проекта. Например, разработка дизайна интерьера гостиной в современном стиле с использованием натуральных материалов.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-item" data-category="interior">
-                <a href="images/portfolio/interior/project4.jpg" data-fancybox="gallery"> 
-                    <img src="images/portfolio/interior/project4.jpg" alt="Название проекта 4">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Название проекта 4</h3>
-                        <p class="portfolio-category">Интерьерный дизайн</p>
-                        <p class="portfolio-description">Краткое описание проекта. Например, разработка дизайна интерьера гостиной в современном стиле с использованием натуральных материалов.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="portfolio-item" data-category="interior">
-                <a href="images/portfolio/interior/project5.jpg" data-fancybox="gallery"> 
-                    <img src="images/portfolio/interior/project5.jpg" alt="Название проекта 5">
-                    <div class="portfolio-overlay">
-                        <h3 class="portfolio-title">Название проекта 5</h3>
-                        <p class="portfolio-category">Интерьерный дизайн</p>
-                        <p class="portfolio-description">Краткое описание проекта. Например, разработка дизайна интерьера гостиной в современном стиле с использованием натуральных материалов.</p>
-                    </div>
-                </a>
-            </div>
-            <!-- Добавьте другие работы по аналогии -->
-        </div>
-    </div>
-</section>
-
-<section id="skills">
-    <div class="container">
-        <h2>Мои навыки</h2>
-        <div class="skills-container">
-            <div class="skill-item">
-                <i class="fas fa-palette skill-icon"></i> 
-                <h3 class="skill-title">Графический дизайн</h3>
-                <p class="skill-description">Разработка логотипов, брендбуков, иллюстраций, макетов для печати и веб.</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-couch skill-icon"></i> 
-                <h3 class="skill-title">Интерьерный дизайн</h3>
-                <p class="skill-description">Планировка пространства, подбор мебели и материалов, 3D-визуализация.</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-vector-square skill-icon"></i> 
-                <h3 class="skill-title">AutoCAD</h3>
-                <p class="skill-description">Создание чертежей и планов помещений.</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-cubes skill-icon"></i> 
-                <h3 class="skill-title">3Ds Max</h3>
-                <p class="skill-description">Создание реалистичных 3D-моделей и визуализаций интерьеров.</p>
-            </div> 
-            <div class="skill-item">
-                <i class="fas fa-camera-retro skill-icon"></i> 
-                <h3 class="skill-title">Фотография</h3>
-                <p class="skill-description">Профессиональная фотосъемка интерьеров и объектов.</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-video skill-icon"></i> 
-                <h3 class="skill-title">Видеомонтаж</h3>
-                <p class="skill-description">Создание видеороликов и презентаций.</p>
-            </div>
-            <div class="skill-item">
-                <i class="fas fa-brain skill-icon"></i> 
-                <h3 class="skill-title">AI-искусство</h3>
-                <p class="skill-description">Генерация изображений и дизайн с помощью нейросетей.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="contact-block">
-      <div class="contact-info">
-        <h2>Контакты</h2>
-        <div class="contact-cards">
-          <div class="contact-card">
-            <i class="fas fa-phone"></i>
-            <p>+7 706 677 13 60</p>
-          </div>
-          <div class="contact-card">
-            <i class="fas fa-envelope"></i>
-            <p><a href="mailto:vladimir.efanov@example.com">vladimir.efanov@example.com</a></p>
-          </div>
-          <div class="contact-card">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>Казахстан</p>
-          </div>
-        </div>
-      </div>
-        
-      <div class="contact-form-block">
-        <h2>Связаться со мной</h2>
-        <div class="contact-form">
-          <form action="#" method="post" id="my-form">
-            <div class="form-group">
-              <label for="name">Ваше имя:</label>
-              <input type="text" id="name" name="entry.2005620554" class="my-input" placeholder="Введите ваше имя" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Ваш номер телефона:</label>
-              <input type="tel" id="phone" name="entry.2141842069" class="my-input" placeholder="Введите ваш номер" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Ваше сообщение:</label>
-              <textarea id="message" name="entry.839337160" class="my-input" placeholder="Напишите ваше сообщение" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn">Отправить</button>
-          </form>
-
-          <div class="success-message" style="display: none;">
-            <i class="fas fa-check-circle success-icon"></i>
-            <p class="success-text">Сообщение отправлено!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section id="hero">
     
+  </section>
+
+  <section id="portfolio">
     
-<footer>
-    <div class="container">
-        <p>© 2023 Владимир Ефанов</p>
-        <div class="social-links">
-            <a href="https://www.instagram.com/your_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.behance.net/your_behance" target="_blank"><i class="fab fa-behance"></i></a>
-            <a href="https://dribbble.com/your_dribbble" target="_blank"><i class="fab fa-dribbble"></i></a>
-            <!--  Добавьте  ссылки  на  другие  социальные  сети  по  аналогии  -->
-        </div>
-    </div>
-</footer>
-    <script src="script.js"></script> 
+  </section>
+
+  <section id="about">
+    
+  </section>
+
+  <section id="skills">
+    
+  </section>
+
+  <section id="contact">
+    
+  </section>
+
+  <footer id="footer">
+    
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
