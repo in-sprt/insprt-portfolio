@@ -32,8 +32,12 @@ var hamburger = document.querySelector(".hamburger");
 var navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
+    console.log("Click"); //  Вывод  в  консоль
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
+    if (navMenu.classList.contains("active")) {
+        console.log("Menu active"); //  Вывод  в  консоль
+    }
 });
 
 // Закрываем меню при клике на ссылку
