@@ -158,12 +158,19 @@ nav ul li a:hover {
         flex-direction: column;
         background-color: var(--bg-color);
         width: 100%;
-        z-index: 1000;
+         height: 100%; 
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
+     .nav-menu a {
+         color: #fff; /*  Или  другой  цвет,  контрастный  фону  */
+         text-decoration: none; 
+         display: block; /*  Занимает  всю  ширину  родительского  элемента  */
+         padding: 10px 20px; /*  Добавляем  отступы  */
+     }
+    
     .nav-menu.active {
         left: 0; /* Показываем меню */
     }
