@@ -20,8 +20,53 @@ body {
 
 /* Стили для основных блоков (примеры) */
 header {
-  background-color: #303030; /* Темнее, чем фон body */
-  padding: 20px 0; 
+  background-color: #303030;
+  padding: 20px 0;
+  position: fixed; /* Фиксируем header вверху страницы */
+  width: 100%;
+  z-index: 1000; /*  Устанавливаем  высокий  z-index  */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /*  Добавляем  отступы  слева  и  справа  */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  float: left; /*  Размещаем  логотип  слева  */
+}
+
+.logo a {
+  color: var(--secondary-color);
+}
+
+.main-nav {
+  float: right; /*  Размещаем  навигацию  справа  */
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.main-nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--accent-color);
 }
 
 footer {
