@@ -1,3 +1,4 @@
+"use strict";
 // Плавный скролл при клике на ссылки в меню
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -27,8 +28,8 @@ window.addEventListener('scroll', () => {
 });
 
 // Мобильное меню
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+var hamburger = document.querySelector(".hamburger");
+var navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
