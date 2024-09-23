@@ -32,11 +32,11 @@ var hamburger = document.querySelector(".hamburger");
 var mobileMenu = document.querySelector(".mobile-menu");
 
 hamburger.addEventListener("click", () => {
-    console.log("Click"); //  Вывод  в  консоль
+    console.log("Click");
     hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active")
-    if (navMenu.classList.contains("active")) {
-        console.log("Menu active"); //  Вывод  в  консоль
+    mobileMenu.classList.toggle("active");
+    if (mobileMenu.classList.contains("active")) {
+        console.log("Menu active");
     }
 });
 
