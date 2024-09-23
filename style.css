@@ -95,6 +95,7 @@ nav {
     color: var(--text-color);
 }
 
+/*  Стили  для  меню  на  ПК  */
 nav ul {
     display: flex;
     list-style: none;
@@ -116,16 +117,12 @@ nav ul li a:hover {
 }
 
 /* Media Queries (Header) */
+/*  Стили  для  мобильного  меню  */
 @media (max-width: 768px) {
     nav ul {
-        display: none;  /*  Скрываем  меню  на  мобильных  устройствах  */
+        display: none; /*  Скрываем  меню  на  мобильных  устройствах  */
     }
 
-    /*  Здесь  можно  добавить  стили  для  мобильного  меню,  например,  кнопку  "гамбургер"  */
-}
-
-
-/* Мобильное меню */
 .hamburger {
     display: none; /* Скрываем по умолчанию на десктопе */
     cursor: pointer;
@@ -144,42 +141,34 @@ nav ul li a:hover {
     transition: all 0.3s ease-in-out;
     background-color: var(--secondary-color); 
 }
-
-@media (max-width: 768px) {
     
     .mobile-menu {
-        display: none; /*  Изначально  скрываем  меню  */
-        position: fixed; /*  Фиксируем  меню  на  экране  */
-        top: 0; /*  Прикрепляем  меню  к  верхней  части  экрана  */
-        left: 0; /*  Прикрепляем  меню  к  левой  части  экрана  */
-        width: 100%; /*  Меню  занимает  всю  ширину  экрана  */
-        height: 100%; /*  Меню  занимает  всю  высоту  экрана  */
-        background-color: var(--bg-color); /*  Цвет  фона  меню  */
-        flex-direction: column; /*  Располагаем  пункты  меню  вертикально  */
-        align-items: center; /*  Центрируем  пункты  меню  по  горизонтали  */
-        z-index: 1000; /*  Устанавливаем  высокий  z-index,  чтобы  меню  было  поверх  других  элементов  */
-        transition: left 0.3s ease-in-out; /*  Добавляем  плавную  анимацию  */
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
     }
 
     .mobile-menu.active {
-        display: flex; /*  Отображаем  меню,  когда  оно  активно  */
+        display: flex; 
     }
-}
 
-    .nav-menu li {
+    .mobile-menu .nav-menu li {
         margin: 15px 0;
     }
-    
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+
+    .mobile-menu .nav-menu a {
+        color: #fff; /*  Или  другой  цвет,  контрастный  фону  */
+        text-decoration: none;
+        display: block;
+        padding: 10px 20px;
     }
 }
 
