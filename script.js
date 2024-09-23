@@ -4,20 +4,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     navDots.forEach(dot => {
         dot.addEventListener('click', function() {
-            const targetId = this.dataset.target;
-            const targetSection = document.querySelector(targetId);
+            // ... (код для плавной прокрутки) ...
+        });
+    });
 
-            // Удаляем класс "active" у всех точек
-            navDots.forEach(dot => dot.classList.remove('active'));
-            // Добавляем класс "active" к текущей точке
+    // Добавляем обработчик события прокрутки для обновления активной точки
+    window.addEventListener('scroll', function() {
+        // ... (код для обновления активной точки при прокрутке) ... 
+    });
+
+    // --- Код для фильтрации ---
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filterCategory = this.dataset.filter;
+
+            // Удаляем класс "active" у всех кнопок
+            filterButtons.forEach(button => button.classList.remove('active'));
+            // Добавляем класс "active" к текущей кнопке
             this.classList.add('active');
 
-            // Плавная прокрутка к целевому разделу
-            targetSection.scrollIntoView({
-                behavior: 'smooth'
+            portfolioItems.forEach(item => {
+                if (filterCategory === 'all' || item.dataset.category === filterCategory) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
             });
         });
     });
+});
 
     // Добавляем обработчик события прокрутки для обновления активной точки
     window.addEventListener('scroll', function() {
