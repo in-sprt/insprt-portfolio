@@ -57,6 +57,7 @@ h2 {
 
 /* Header */
 header {
+    overflow-x: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -80,6 +81,7 @@ nav {
 }
 
 .logo {
+    position: relative;
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -120,6 +122,10 @@ nav ul li a:hover {
 .hamburger {
     display: none; /* Скрываем по умолчанию на десктопе */
     cursor: pointer;
+    position: absolute; /* Добавлено:  позиционируем  .hamburger */
+    top: 50%;
+    right: 15px; /* Добавлено:  отступ от правого края */
+    transform: translateY(-50%); /* Центрируем по вертикали */
 }
 
 .bar {
