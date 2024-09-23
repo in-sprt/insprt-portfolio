@@ -29,7 +29,7 @@ window.addEventListener('scroll', () => {
 
 // Мобильное меню
 var hamburger = document.querySelector(".hamburger");
-var navMenu = document.querySelector(".nav-menu");
+var mobileMenu = document.querySelector(".mobile-menu");
 
 hamburger.addEventListener("click", () => {
     console.log("Click"); //  Вывод  в  консоль
