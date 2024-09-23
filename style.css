@@ -1,113 +1,14 @@
-/* style.css */
-
-/* Сброс стилей браузера */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Общие стили */
 body {
-  font-family: 'Montserrat', sans-serif; /* Подключите шрифт Montserrat или выберите другой */
-  font-size: 16px;
-  line-height: 1.6;
-  color: #f2f2f2; /* Светло-серый цвет текста */
-  background-color: #212121; /* Темно-серый цвет фона */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0;
+    background-color: #000; /*  Темный  фон  */
+    color: #fff; /*  Светлый  текст  */
 }
 
-/* Стили для основных блоков (примеры) */
-header {
-  background-color: #303030;
-  padding: 20px 0;
-  position: fixed; /* Фиксируем header вверху страницы */
-  width: 100%;
-  z-index: 1000; /*  Устанавливаем  высокий  z-index  */
+/* Стили для секций */
+#hero, #portfolio, #about, #skills, #contact {
+    padding: 80px 0; /*  Пример  отступов  */
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px; /*  Добавляем  отступы  слева  и  справа  */
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  float: left; /*  Размещаем  логотип  слева  */
-}
-
-.logo a {
-  color: var(--secondary-color);
-}
-
-.main-nav {
-  float: right; /*  Размещаем  навигацию  справа  */
-}
-
-.main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.main-nav li {
-  display: inline-block;
-  margin-left: 30px;
-}
-
-.main-nav a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-  color: var(--accent-color);
-}
-
-footer {
-  background-color: #303030; 
-  padding: 20px 0; 
-  text-align: center;
-}
-
-/* Цветовая палитра */
-:root {
-  --primary-color: #212121; /* Темно-серый */
-  --secondary-color: #f2f2f2; /* Светло-серый */
-  --accent-color: #e0b04c; /* Янтарный (пример, можно изменить) */
-}
-
-/* Стили для ссылок */
-a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  transition: color 0.3s ease; 
-}
-
-a:hover {
-  color: var(--accent-color);
-}
-
-/* Стили для заголовков (h1-h6) - пример */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  color: var(--secondary-color);
-  margin-bottom: 10px; 
-}
-
-h1 {
-  font-size: 3rem; 
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
-/*  Добавьте  стили  для  других  заголовков  по  аналогии  */
-
-/*  Здесь  будут  добавляться  стили  для  конкретных  разделов  сайта  */ 
+/*  Далее  будут  добавляться  стили  для  конкретных  блоков  */ 
