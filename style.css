@@ -621,57 +621,6 @@ nav ul li a:hover {
     }
 }
 
-/* Testimonials Section */
-#testimonials {
-    padding: 80px 0;
-    background-color: var(--bg-color);
-}
-
-#testimonials h2 {
-    /* Стили для h2 уже определены в общих стилях */
-}
-
-.testimonials-slider {
-    /*  Основные  стили  для  слайдера  будут  заданы  библиотекой  Swiper  */
-    /*  Здесь  мы  можем  настроить  дополнительные  стили,  например  */
-    width: 100%;
-    max-width: 800px; /*  Ограничиваем  максимальную  ширину  слайдера  */
-    margin: 0 auto; 
-}
-
-.testimonial-item {
-    background-color: var(--accent-color);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center; 
-}
-
-.testimonial-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: var(--text-color);
-}
-
-.testimonial-author {
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.testimonial-author::before {
-    content: "- "; /*  Добавляем  тире  перед  именем  автора  */
-}
-
-/*  Стили  для  пагинации  Swiper  */
-.swiper-pagination-bullet {
-    background-color: var(--secondary-color); /*  Цвет  неактивного  буллета  */
-}
-
-.swiper-pagination-bullet-active {
-    background-color: var(--accent-color); /*  Цвет  активного  буллета  */
-}
-
 /* Contact Section */
 #contact {
   padding: 80px 0;
