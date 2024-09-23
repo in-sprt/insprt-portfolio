@@ -444,20 +444,12 @@ nav ul li a:hover {
     justify-content: center;
     margin-bottom: 40px;
 }/* Portfolio Section */
-#portfolio {
-    padding: 80px 0;
-    background-color: var(--bg-color);
-}
 
-#portfolio h2 {
-    /* Стили для h2 уже определены в общих стилях */
-}
-
-/* Фильтры */
-.portfolio-filters {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
+@media (max-width: 768px) {
+    .portfolio-filters {
+        flex-wrap: wrap; /*  Фильтры  будут  переноситься  на  новую  строку  */
+        justify-content: center; /*  Центрируем  фильтры  */
+    }
 }
 
 .filter-button {
@@ -487,6 +479,12 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /*  Изменено  с  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  */
     gap: 20px; /*  Изменено  с  gap: 30px;  */
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /*  Одна  колонка  на  мобильных  устройствах  */
+    }
 }
 
 .portfolio-item {
@@ -648,6 +646,12 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column; /*  Изменено  с  display: flex;  */
     gap: 20px; /*  Изменено  с  gap: 30px;  */
+}
+
+@media (max-width: 768px) {
+    .contact-block {
+        flex-direction: column; /* Располагаем блоки вертикально */
+    }
 }
 
 /* Контактная информация */
