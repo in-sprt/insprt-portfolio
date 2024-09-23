@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         // ... (код для обновления активной точки при прокрутке) ... 
     });
-
+    
+    Fancybox.bind("[data-fancybox='gallery']", {
+        // Опции Fancybox (при необходимости)
+    });
+    
     // --- Код для фильтрации ---
     const filterButtons = document.querySelectorAll('.filter-button');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
