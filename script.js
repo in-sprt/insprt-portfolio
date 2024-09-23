@@ -11,12 +11,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Навбар (полупрозрачность при прокрутке)
 window.addEventListener('scroll', () => {
-  const header = document.querySelector('header');
-  if (window.scrollY > 0) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
+    const header = document.querySelector('header');
+    const parallaxBg = document.querySelector('.parallax-bg');
+    let scrollY = window.pageYOffset;
+
+    //  Навбар  (полупрозрачность  при  прокрутке)
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+
+    //  Parallax-эффект
+    parallaxBg.style.backgroundPositionY = scrollY * 0.2 + 'px'; 
 });
 
 // Мобильное меню
@@ -34,13 +41,6 @@ navMenu.querySelectorAll('a').forEach(link => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
     });
-});
-
-// Улучшение parallax-эффекта
-window.addEventListener('scroll', () => {
-  const parallaxBg = document.querySelector('.parallax-bg');
-  let scrollY = window.pageYOffset;
-  parallaxBg.style.backgroundPositionY = scrollY * 0.5 + 'px'; // Регулируем скорость движения фона
 });
 
 // Фильтрация портфолио
