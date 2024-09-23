@@ -120,6 +120,107 @@ nav {
     opacity: 1;
 }
 
+
+/*  Стили  для  секции  Portfolio  */
+#portfolio {
+    background-color: #000; 
+    color: #fff; 
+}
+
+#portfolio h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/*  Стили  для  фильтров  */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent; 
+}
+
+.filter-button:hover,
+.filter-button.active {
+    color: #ddd; 
+    border-bottom: 2px solid #ddd; 
+}
+
+/*  Стили  для  сетки  работ  */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden; 
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; 
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); 
+}
+
+/*  Стили  для  оверлея  */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff; 
+}
+
+.portfolio-category {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ddd; 
+}
+
+.portfolio-description {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 20px; 
+    color: #ddd; 
+}
+
+
 /* Footer */
 footer {
     padding: 20px 0;
@@ -131,8 +232,8 @@ footer {
 
 
 /* Стили для секций */
-#hero, #portfolio, #about, #skills, #contact {
+/*#hero, #portfolio, #about, #skills, #contact {
     padding: 80px 0; /*  Пример  отступов  */
-}
+}*/
 
 /*  Далее  будут  добавляться  стили  для  конкретных  блоков  */ 
