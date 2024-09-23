@@ -155,7 +155,6 @@ nav ul li a:hover {
         left: -100%; /* Скрываем меню за левым краем */
         top: 0;
         gap: 0; 
-        flex-direction: column;
         background-color: var(--bg-color);
         width: 100%;
         text-align: center;
@@ -164,7 +163,6 @@ nav ul li a:hover {
     }
     
     .nav-menu.active {
-        display: flex;
         left: 0; /* Показываем меню */
     }
 
