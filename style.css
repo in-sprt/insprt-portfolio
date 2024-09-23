@@ -150,20 +150,22 @@ nav ul li a:hover {
         display: block; 
     }
 
-.nav-menu {
-    display: none; /*  Изначально  скрыто  */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff; /*  Или  другой  цвет  */
-    z-index: 1000;
-}
-
-.nav-menu.show {
-    display: block; /*  Видимо  при  наличии  класса  show  */
-}
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Скрываем меню за левым краем */
+        top: 0;
+        gap: 0; 
+        flex-direction: column;
+        background-color: var(--bg-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-menu.active {
+        left: 0; /* Показываем меню */
+    }
 
     .nav-menu li {
         margin: 15px 0;
