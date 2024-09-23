@@ -213,6 +213,14 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+    .hero-content {
+        display: flex;
+        flex-direction: column; /*  Располагаем  элементы  вертикально  */
+        align-items: center; /*  Центрируем  элементы  по  горизонтали  */
+    }
+}
+
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -247,13 +255,16 @@ nav ul li a:hover {
 }
 
 /* Media Queries (Hero) */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem; /*  Уменьшаем  размер  заголовка  на  мобильных  */
-    }
+.hero .hero-subtitle {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
 
+@media (max-width: 768px) {
     .hero .hero-subtitle {
-        font-size: 1.5rem; 
+        margin-bottom: 1rem; 
+        font-size: 1.5rem; /*  Или  другое  подходящее  значение  */
     }
 }
 
