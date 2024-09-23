@@ -146,25 +146,25 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
-    .hamburger {
-        display: block; 
+    
+    .mobile-menu {
+        display: none; /*  Изначально  скрываем  меню  */
+        position: fixed; /*  Фиксируем  меню  на  экране  */
+        top: 0; /*  Прикрепляем  меню  к  верхней  части  экрана  */
+        left: 0; /*  Прикрепляем  меню  к  левой  части  экрана  */
+        width: 100%; /*  Меню  занимает  всю  ширину  экрана  */
+        height: 100%; /*  Меню  занимает  всю  высоту  экрана  */
+        background-color: var(--bg-color); /*  Цвет  фона  меню  */
+        flex-direction: column; /*  Располагаем  пункты  меню  вертикально  */
+        align-items: center; /*  Центрируем  пункты  меню  по  горизонтали  */
+        z-index: 1000; /*  Устанавливаем  высокий  z-index,  чтобы  меню  было  поверх  других  элементов  */
+        transition: left 0.3s ease-in-out; /*  Добавляем  плавную  анимацию  */
     }
 
-    .nav-menu {
-        position: fixed;
-        left: -100%; /* Скрываем меню за левым краем */
-        top: 0;
-        gap: 0; 
-        background-color: var(--bg-color);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    .mobile-menu.active {
+        display: flex; /*  Отображаем  меню,  когда  оно  активно  */
     }
-    
-    .nav-menu.active {
-        left: 0; /* Показываем меню */
-    }
+}
 
     .nav-menu li {
         margin: 15px 0;
