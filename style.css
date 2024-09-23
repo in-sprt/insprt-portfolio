@@ -203,6 +203,12 @@ nav ul li a:hover {
     filter: blur(5px); /* Добавляем разфокусировку для эффекта глубины */
 }
 
+@media (max-width: 768px) {
+    .parallax-bg {
+        background-attachment: scroll; /* Отключаем фиксацию фона */
+    }
+}
+
 .hero .container {
     position: relative;
     z-index: 2; /*  Располагаем  контент  над  фоновым  изображением  */
