@@ -1,306 +1,50 @@
-/* Общие стили */
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    background-color: #000; 
-    color: #fff; 
-    overflow-x: hidden; /*  Скрываем  горизонтальную  полосу  прокрутки  */
+/* Сброс стилей (Normalize.css или другой) */
+
+:root {
+  --primary-color: #212121; /* Темно-серый */
+  --secondary-color: #f2f2f2; /* Светло-серый */
+  --accent-color: #303030; /* Темно-серый для контраста */
+  --text-color: var(--secondary-color);
+  --bg-color: var(--primary-color);
 }
 
-/* Стили для header */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /*  Помещаем  header  над  другими  элементами  */
-    background-color: rgba(0, 0, 0, 0.8);
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-nav {
-    display: flex;
-    justify-content: flex-end; /*  Выравнивание  меню  справа  */
-    align-items: center;
-    padding: 15px 0;
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
 }
 
-.nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+a:hover {
+  color: var(--accent-color);
 }
 
-.nav-link {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 30px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--text-color);
+  text-align: center;
 }
 
-.nav-link:hover {
-    color: #ddd;
-}
+/*  Стили  для  других  элементов  (p,  ul,  li,  и  т.д.)  */
 
+/*  Медиа-запросы  для  мобильной  версии  */
 
-/* Стили для секции Hero */
-#hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative; /*  Для  позиционирования  фонового  изображения  */
-}
-
-.hero-content {
-    margin-bottom: 30px;
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin: 0;
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 10px 0 0;
-}
-
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("images/hero-bg.jpg"); /*  Замените  на  путь  к  вашему  изображению  */
-    background-size: cover;
-    background-position: center;
-    z-index: -1; /*  Размещаем  изображение  позади  контента  */
-    filter: blur(5px); /*  Размытие  фона  */
-}
-
-/* Стили для навигационных точек */
-.hero-nav {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.nav-dots {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.nav-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #fff;
-    margin: 0 5px;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-}
-
-.nav-dot.active {
-    opacity: 1;
-}
-
-
-/*  Стили  для  секции  Portfolio  */
-#portfolio {
-    background-color: #000; 
-    color: #fff; 
-}
-
-#portfolio h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/*  Стили  для  фильтров  */
-.portfolio-filters {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.filter-button {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    border-bottom: 2px solid transparent; 
-}
-
-.filter-button:hover,
-.filter-button.active {
-    color: #ddd; 
-    border-bottom: 2px solid #ddd; 
-}
-
-/*  Стили  для  сетки  работ  */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 20px; 
-}
-
-.portfolio-item {
-    position: relative;
-    overflow: hidden; 
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease; 
-}
-
-.portfolio-item:hover img {
-    transform: scale(1.1); 
-}
-
-/*  Стили  для  оверлея  */
-.portfolio-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
-}
-
-.portfolio-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #fff; 
-}
-
-.portfolio-category {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #ddd; 
-}
-
-.portfolio-description {
-    font-size: 1rem;
-    text-align: center;
-    padding: 0 20px; 
-    color: #ddd; 
-}
-
-/* Стили для секции About */
-#about {
-    background-color: #f2f2f2; /* Светлый фон */
-    color: #333; /* Темный текст */
-}
-
-#about h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #333; 
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 40px; 
-}
-
-.about-image {
-    flex: 1; /*  Изображение  займет  1/3  ширины  */
-    max-width: 300px; /*  Максимальная  ширина  изображения  */
-}
-
-.about-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%; 
-}
-
-.about-text {
-    flex: 2; /*  Текст  займет  2/3  ширины  */
-}
-
-.about-text p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Стили для ссылок на социальные сети */
-.social-links {
-    display: flex;
-    gap: 20px; 
-}
-
-.social-links a {
-    font-size: 1.8rem;
-    color: #333; 
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #555; 
-}
-
-/* Media Queries для адаптивности */
 @media (max-width: 768px) {
-    .about-content {
-        flex-direction: column; /*  Вертикальное  расположение  на  мобильных  */
-        text-align: center; /*  Центрирование  текста  */
-    }
-
-    .about-image {
-        max-width: 100%; /*  Изображение  на  всю  ширину  */
-        margin-bottom: 30px; 
-    }
+  /*  Стили  для  мобильных  устройств  */
 }
-
-/* Footer */
-footer {
-    padding: 20px 0;
-    background-color: #000;
-    text-align: center;
-    color: #fff;
-}
-
-
-
-/* Стили для секций */
-/*#hero, #portfolio, #about, #skills, #contact {
-    padding: 80px 0; /*  Пример  отступов  */
-}*/
-
-/*  Далее  будут  добавляться  стили  для  конкретных  блоков  */ 
