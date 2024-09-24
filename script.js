@@ -27,7 +27,7 @@ window.addEventListener('scroll', () => {
   parallaxBg.style.backgroundPositionY = scrollY * 0.5 + 'px'; 
 });
 
-
+// кукуепта
 
 // Фильтр портфолио 
 
