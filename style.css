@@ -282,8 +282,7 @@ nav {
 
 /* УСЛУГИы */
 
-/* Services Section */
-/* Services Section */
+/* СЕРВИСЫ */
 #services {
   padding: 80px 0;
   background-color: var(--bg-color);
@@ -302,6 +301,8 @@ nav {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  cursor: pointer; /*  Курсор  указывает  на  интерактивность  */
 }
 
 .service-card-front,
@@ -316,27 +317,27 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 30px;
-  transition: opacity 0.6s ease; /* Плавный переход с исчезновением */
+  transition: opacity 0.3s ease; /*  Анимация  как  у  логотипа  */
+  opacity: 1;
 }
 
 .service-card-front {
   background-color: var(--primary-color);
-  color: var(--text-color);
   z-index: 2;
 }
 
 .service-card-back {
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  opacity: 0; /*  Обратная  сторона  невидима  по  умолчанию  */
+  opacity: 0; /*  Скрываем  по  умолчанию  */
 }
 
 .service-item:hover .service-card-front {
-  opacity: 0; /*  Передняя  сторона  исчезает  при  наведении  */
+  opacity: 0;
 }
 
 .service-item:hover .service-card-back {
-  opacity: 1; /*  Обратная  сторона  появляется  при  наведении  */
+  opacity: 1;
 }
 
 .service-icon {
@@ -353,7 +354,7 @@ nav {
 .service-description {
   font-size: 1rem;
   line-height: 1.6;
-  text-align: center; 
+  text-align: left;
 }
 
 /* Мобильная версия */
@@ -364,21 +365,19 @@ nav {
 
   .service-card-front,
   .service-card-back {
-    position: relative;
-    opacity: 1; /* Обе стороны видны по умолчанию */
-    transition: none; /* Отключаем переход */
+    position: relative; 
+    opacity: 1;
+    transform: none; 
+    backface-visibility: visible; 
+    transition: none; /*  Отключаем  анимацию  */
   }
 
   .service-card-back {
     display: none; 
   }
 
-  .service-item:hover .service-card-front {
-    display: none; 
-  }
-
   .service-item:hover .service-card-back {
-    display: block;
+    display: block; 
   }
 }
 
