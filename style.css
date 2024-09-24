@@ -329,16 +329,80 @@ nav {
 
 /* ПОРТФОЛИО */
 
+/* Portfolio Section */
 #portfolio {
-  /*  Стили  для  блока  "Портфолио"  */
+  padding: 80px 0;
+  background-color: var(--bg-color);
 }
 
 .portfolio-filters {
-  /*  Стили  для  фильтра  */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.filter-button {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-button.active,
+.filter-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .portfolio-item {
-  /*  Стили  для  работ  в  портфолио  */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-info {
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.portfolio-info h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.portfolio-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* КОНТАКТЫ */
