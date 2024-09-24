@@ -29,10 +29,83 @@ window.addEventListener('scroll', () => {
 
 // кукуепта
 
-// Фильтр портфолио 
+const projects = [
+  {
+    title: "Логотип для кофейни",
+    category: "graphic",
+    description: "Разработка яркого и запоминающегося логотипа для новой кофейни в центре города.",
+    images: [
+      "images/portfolio/graphic/1.jpg",
+      "images/portfolio/graphic/2.jpg",
+      "images/portfolio/graphic/3.jpg"
+    ]
+  },
+  {
+    title: "Дизайн интерьера квартиры",
+    category: "interior",
+    description: "Создание современного и функционального дизайна интерьера для трехкомнатной квартиры.",
+    images: [
+      "images/portfolio/interior/1.jpg",
+      "images/portfolio/interior/2.jpg"
+    ]
+  },
+  {
+    title: "Брендинг для фитнес-клуба",
+    category: "branding",
+    description: "Разработка фирменного стиля и брендбука для нового фитнес-клуба.",
+    images: [
+      "images/portfolio/branding/1.jpg",
+      "images/portfolio/branding/2.jpg",
+      "images/portfolio/branding/3.jpg",
+      "images/portfolio/branding/4.jpg"
+    ]
+  },
+  {
+    title: "Иллюстрации для детской книги",
+    category: "illustration",
+    description: "Создание красочных иллюстраций для детской книги сказок.",
+    images: [
+      "images/portfolio/illustration/1.jpg",
+      "images/portfolio/illustration/2.jpg"
+    ]
+  },
+  // ... добавьте данные для других проектов
+];
 
+const portfolioGrid = document.getElementById('portfolio-grid');
+
+function displayProjects(projects) {
+  portfolioGrid.innerHTML = ''; 
+
+  projects.forEach((project, index) => {
+    let projectHTML = `
+      <div class="portfolio-item" data-category="${project.category}">
+        <a href="#project-${index}" data-fancybox="project-${index}">
+          <img src="${project.images[0]}" alt="${project.title}">
+        </a>
+        <div class="portfolio-info">
+          <h3>${project.title}</h3>
+        </div>
+        <div id="project-${index}" style="display: none;">
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          ${project.images.map(image => `
+            <a href="${image}" data-fancybox="project-${index}">
+              <img src="${image}" alt="${project.title}">
+            </a>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    portfolioGrid.innerHTML += projectHTML;
+  });
+}
+
+// Инициализация портфолио
+displayProjects(projects);
+
+// Код для фильтрации портфолио (из предыдущих примеров)
 const filterButtons = document.querySelectorAll('.filter-button');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -46,14 +119,13 @@ filterButtons.forEach(button => {
       }
     });
 
-    //  Добавляем  класс  "active"  к  нажатой  кнопке
+    // Добавляем класс "active" к нажатой кнопке
     filterButtons.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
   });
 });
 
-/* Fancy box */
-
-Fancybox.bind("[data-fancybox='gallery']", {
-  //  Опции  Fancybox
+// Инициализация Fancybox 
+Fancybox.bind("[data-fancybox]", {
+  // Ваши опции Fancybox
 });
