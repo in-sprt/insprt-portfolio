@@ -283,6 +283,7 @@ nav {
 /* УСЛУГИы */
 
 /* Services Section */
+/* Services Section */
 #services {
   padding: 80px 0;
   background-color: var(--bg-color);
@@ -290,21 +291,20 @@ nav {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
 .service-item {
   position: relative;
   width: 100%;
-  height: 300px; /* Фиксированная высота для карточки */
+  height: 300px;
   border-radius: 10px;
-  overflow: hidden; 
+  overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  perspective: 1000px; /*  Для  3D-эффекта  */
 }
 
-.service-card-front, 
+.service-card-front,
 .service-card-back {
   position: absolute;
   top: 0;
@@ -316,28 +316,27 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 30px;
-  backface-visibility: hidden; /*  Скрываем  обратную  сторону  */
-  transition: transform 0.6s ease; /*  Добавляем  плавный  переход  */
+  transition: opacity 0.6s ease; /* Плавный переход с исчезновением */
 }
 
 .service-card-front {
   background-color: var(--primary-color);
   color: var(--text-color);
-  z-index: 2; /*  Передняя  сторона  поверх  задней  */
+  z-index: 2;
 }
 
 .service-card-back {
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  transform: rotateY(180deg); /*  Поворачиваем  обратную  сторону  */
+  opacity: 0; /*  Обратная  сторона  невидима  по  умолчанию  */
 }
 
 .service-item:hover .service-card-front {
-  transform: rotateY(-180deg); 
+  opacity: 0; /*  Передняя  сторона  исчезает  при  наведении  */
 }
 
 .service-item:hover .service-card-back {
-  transform: rotateY(0deg);
+  opacity: 1; /*  Обратная  сторона  появляется  при  наведении  */
 }
 
 .service-icon {
@@ -354,28 +353,32 @@ nav {
 .service-description {
   font-size: 1rem;
   line-height: 1.6;
-  text-align: left; /*  Выравнивание  текста  по  левому  краю  */
+  text-align: center; 
 }
 
-/*  Мобильная  версия  */
+/* Мобильная версия */
 @media (max-width: 768px) {
   .service-item {
-    height: auto; /*  Отключаем  фиксированную  высоту  */
+    height: auto;
   }
 
   .service-card-front,
   .service-card-back {
-    position: relative; /*  Отключаем  абсолютное  позиционирование  */
-    transform: none; /*  Отключаем  поворот  */
-    backface-visibility: visible; /*  Показываем  обе  стороны  */
+    position: relative;
+    opacity: 1; /* Обе стороны видны по умолчанию */
+    transition: none; /* Отключаем переход */
   }
 
   .service-card-back {
-    display: none; /*  Скрываем  обратную  сторону  по  умолчанию  */
+    display: none; 
+  }
+
+  .service-item:hover .service-card-front {
+    display: none; 
   }
 
   .service-item:hover .service-card-back {
-    display: block; /*  Показываем  обратную  сторону  при  наведении  */
+    display: block;
   }
 }
 
