@@ -359,17 +359,44 @@ nav {
 }
 
 /* Мобильная версия */
+/* Слайдер услуг (мобильная версия) */
 @media (max-width: 768px) {
-  .service-item {
-    height: auto; 
+  .services-slider {
+    width: 100%;
+    height: auto; /*  Высота  будет  адаптироваться  к  содержимому  */
+    margin-bottom: 40px; /*  Добавим отступ снизу  */
   }
 
-  .service-card-front,
+  .services-grid {
+    display: flex; /*  Располагаем  карточки  в  одну  линию  */
+    flex-direction: column;
+    gap: 30px; 
+  }
+
+  .service-item {
+    height: auto;
+    width: 100%; /*  Занимает  100%  ширины  контейнера  */
+    box-sizing: border-box;
+    margin: 0; /*  Убираем  отступы  */
+  }
+
+  .swiper-slide {
+    display: flex; /*  Для  вертикального  центрирования  карточки  в  слайде  */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-pagination {
+    margin-top: 20px; /*  Отступ  снизу  */
+  }
+
+  /*  Стили  для  карточек  на  мобильных  (переключение  по  клику)  */
+  .service-card-front, 
   .service-card-back {
-    position: relative; 
+    position: relative; /*  Отключаем  абсолютное  позиционирование  */
     opacity: 1;
     transform: none; 
-    backface-visibility: visible; 
+    backface-visibility: visible;
     transition: none; 
   }
 
@@ -377,8 +404,12 @@ nav {
     display: none; 
   }
 
-  .service-item:hover .service-card-back {
-    display: block; 
+  .service-item.active .service-card-front { 
+    display: none;
+  }
+
+  .service-item.active .service-card-back {
+    display: block;
   }
 }
 
