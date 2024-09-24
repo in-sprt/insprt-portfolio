@@ -27,6 +27,34 @@ window.addEventListener('scroll', () => {
   parallaxBg.style.backgroundPositionY = scrollY * 0.5 + 'px'; 
 });
 
+// Инициализация слайдера Swiper (только на мобильных)
+if (window.innerWidth <= 768) {
+  const swiper = new Swiper('.services-slider', {
+    slidesPerView: 1, 
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  // Обработка кликов на карточки услуг
+  const serviceItems = document.querySelectorAll('.service-item');
+  serviceItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Переключаем класс 'active' для текущей карточки
+      item.classList.toggle('active');
+
+      // Снимаем класс 'active' с других карточек
+      serviceItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+        }
+      });
+    });
+  });
+}
+
 // Портфолио
 
 const projects = [
