@@ -26,27 +26,18 @@ window.addEventListener('scroll', () => {
   parallaxBg.style.backgroundPositionY = scrollY * 0.5 + 'px'; 
 });
 
-/* кнопка "Подробнее" */
-
+//  Кнопка  "Подробнее"  для  услуг
 const serviceItems = document.querySelectorAll('.service-item');
 
 serviceItems.forEach(item => {
-  const description = item.querySelector('.service-description');
-  const button = document.createElement('button'); //  Создаем  кнопку  "Подробнее"
-  button.textContent = 'Подробнее';
-  button.classList.add('read-more-btn'); //  Добавляем  класс  для  стилизации
-
-  item.appendChild(button); //  Добавляем  кнопку  в  карточку  услуги
-
-  //  По  умолчанию  описание  скрыто
-  description.style.display = 'none';
+  const description = item.querySelector('.detailed-description');
+  const button = item.querySelector('.read-more-btn');
 
   button.addEventListener('click', () => {
-    description.style.display = description.style.display === 'none' ? 'block' : 'none';
-    button.textContent = button.textContent === 'Подробнее' ? 'Скрыть' : 'Подробнее';
+    description.classList.toggle('active'); //  Плавное  появление/исчезновение
+    button.textContent = description.classList.contains('active') ? 'Скрыть' : 'Подробнее';
   });
 });
-
 // Фильтр портфолио 
 
 const filterButtons = document.querySelectorAll('.filter-button');
