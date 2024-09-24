@@ -51,20 +51,105 @@ h2 {
 
 /* ХЕДЕР */
 
+/* Header */
 header {
-  /*  Стили  для  хедера  */
+  background-color: var(--primary-color);
+  padding: 20px 0;
+  position: fixed; /*  Фиксированный  хедер  */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /*  Хедер  поверх  других  элементов  */
+}
+
+.container {
+  /* ... */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  /*  Стили  для  логотипа  */
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--secondary-color);
 }
 
-nav ul {
-  /*  Стили  для  меню  */
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /*  Горизонтальное  меню  */
+}
+
+.nav-menu li {
+  margin-left: 30px;
+}
+
+.nav-menu a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--accent-color);
 }
 
 .hamburger {
-  /*  Стили  для  кнопки  "гамбургер"  */
+  display: none; /*  Скрываем  на  больших  экранах  */
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease-in-out;
+}
+
+/*  Мобильная  версия  */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /*  Скрываем  меню  */
+    position: absolute;
+    top: 100%; /*  Располагаем  под  хедером  */
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    flex-direction: column; /*  Вертикальное  меню  */
+    padding: 20px;
+  }
+
+  .nav-menu.active {
+    display: flex; /*  Показываем  меню  */
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
 
 /* HERO-блок */
