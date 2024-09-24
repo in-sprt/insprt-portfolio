@@ -27,7 +27,7 @@ window.addEventListener('scroll', () => {
   parallaxBg.style.backgroundPositionY = scrollY * 0.5 + 'px'; 
 });
 
-// кукуепта
+// Портфолио
 
 const projects = [
   {
@@ -73,6 +73,7 @@ const projects = [
 ];
 
 const portfolioGrid = document.getElementById('portfolio-grid');
+const filterButtons = document.querySelectorAll('.filter-button'); 
 
 function displayProjects(projects) {
   portfolioGrid.innerHTML = ''; 
@@ -85,10 +86,9 @@ function displayProjects(projects) {
         </a>
         <div class="portfolio-info">
           <h3>${project.title}</h3>
+          <p>${project.description}</p>
         </div>
         <div id="project-${index}" style="display: none;">
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
           ${project.images.map(image => `
             <a href="${image}" data-fancybox="project-${index}">
               <img src="${image}" alt="${project.title}">
@@ -99,33 +99,30 @@ function displayProjects(projects) {
     `;
     portfolioGrid.innerHTML += projectHTML;
   });
+
+  //  Код  фильтрации  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.filter;
+
+      portfolioGrid.querySelectorAll('.portfolio-item').forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    });
+  });
 }
 
 // Инициализация портфолио
 displayProjects(projects);
 
-// Код для фильтрации портфолио (из предыдущих примеров)
-const filterButtons = document.querySelectorAll('.filter-button');
-
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const category = button.dataset.filter;
-
-    portfolioItems.forEach(item => {
-      if (category === 'all' || item.dataset.category === category) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-
-    // Добавляем класс "active" к нажатой кнопке
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-  });
-});
-
-// Инициализация Fancybox 
+// Fancybox 
 Fancybox.bind("[data-fancybox]", {
   // Ваши опции Fancybox
 });
