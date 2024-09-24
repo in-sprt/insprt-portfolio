@@ -282,12 +282,49 @@ nav {
 
 /* УСЛУГИ */
 
+/* Services Section */
 #services {
-  /*  Стили  для  блока  "Услуги"  */
+  padding: 80px 0;
+  background-color: var(--bg-color); /*  Или  другой  цвет  фона  */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*  Адаптивная  сетка  */
+  gap: 30px; /*  Отступ  между  карточками  */
 }
 
 .service-item {
-  /*  Стили  для  карточек  услуг  */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: var(--secondary-color); 
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/*  Мобильная  версия  */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr; /*  Одна  колонка  на  мобильных  */
+  }
 }
 
 /* ПОРТФОЛИО */
