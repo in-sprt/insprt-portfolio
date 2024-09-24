@@ -302,7 +302,7 @@ nav {
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   color: var(--text-color);
-  cursor: pointer;
+  cursor: pointer; /*  Курсор  указывает  на  интерактивность  */
 }
 
 .service-card-front,
@@ -314,10 +314,10 @@ nav {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /*  Центрируем  по  вертикали  */
-  align-items: center; /*  Центрируем  по  горизонтали  */
+  justify-content: center;
+  align-items: center;
   padding: 30px;
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.3s ease; /*  Анимация  как  у  логотипа  */
   opacity: 1;
 }
 
@@ -329,9 +329,7 @@ nav {
 .service-card-back {
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  opacity: 0;
-  padding: 20px; /*  Добавлены  отступы  для  текста  */
-  text-align: left;
+  opacity: 0; /*  Скрываем  по  умолчанию  */
 }
 
 .service-item:hover .service-card-front {
@@ -356,6 +354,7 @@ nav {
 .service-description {
   font-size: 1rem;
   line-height: 1.6;
+  text-align: left;
 }
 
 /* Мобильная версия */
@@ -366,19 +365,19 @@ nav {
 
   .service-card-front,
   .service-card-back {
-    position: relative;
+    position: relative; 
     opacity: 1;
-    transform: none;
-    backface-visibility: visible;
-    transition: none; 
+    transform: none; 
+    backface-visibility: visible; 
+    transition: none; /*  Отключаем  анимацию  */
   }
 
   .service-card-back {
-    display: none;
+    display: none; 
   }
 
   .service-item:hover .service-card-back {
-    display: block;
+    display: block; 
   }
 }
 
