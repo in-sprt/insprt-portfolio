@@ -68,39 +68,34 @@ const projects = [
       "images/portfolio/illustration/1.jpg",
       "images/portfolio/illustration/2.jpg"
     ]
-  },
-  // ... добавьте данные для других проектов
+  }
 ];
 
 const portfolioGrid = document.getElementById('portfolio-grid');
-const filterButtons = document.querySelectorAll('.filter-button'); 
+const filterButtons = document.querySelectorAll('.filter-button');
 
 function displayProjects(projects) {
-  portfolioGrid.innerHTML = ''; 
+  portfolioGrid.innerHTML = '';
 
   projects.forEach((project, index) => {
     let projectHTML = `
       <div class="portfolio-item" data-category="${project.category}">
-        <a href="#project-${index}" data-fancybox="project-${index}">
+        <a href="${project.images[0]}" data-fancybox="gallery-${index}">
           <img src="${project.images[0]}" alt="${project.title}">
+          <div class="portfolio-info">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+          </div>
         </a>
-        <div class="portfolio-info">
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
-        </div>
-        <div id="project-${index}" style="display: none;">
-          ${project.images.map(image => `
-            <a href="${image}" data-fancybox="project-${index}">
-              <img src="${image}" alt="${project.title}">
-            </a>
-          `).join('')}
-        </div>
+        ${project.images.slice(1).map(image => `
+          <a href="${image}" data-fancybox="gallery-${index}" style="display:none;"></a>
+        `).join('')}
       </div>
     `;
     portfolioGrid.innerHTML += projectHTML;
   });
 
-  //  Код  фильтрации  
+  // Код фильтрации 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
       const category = button.dataset.filter;
@@ -122,7 +117,7 @@ function displayProjects(projects) {
 // Инициализация портфолио
 displayProjects(projects);
 
-// Fancybox 
+// Fancybox
 Fancybox.bind("[data-fancybox]", {
   // Ваши опции Fancybox
 });
