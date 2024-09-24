@@ -18,6 +18,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+
 ///  эффект  паралакса
 window.addEventListener('scroll', () => {
   const parallaxBg = document.querySelector('.parallax-bg');
@@ -26,18 +27,39 @@ window.addEventListener('scroll', () => {
   parallaxBg.style.backgroundPositionY = scrollY * 0.5 + 'px'; 
 });
 
+
 //  Кнопка  "Подробнее"  для  услуг
 const serviceItems = document.querySelectorAll('.service-item');
 
 serviceItems.forEach(item => {
-  const description = item.querySelector('.detailed-description');
-  const button = item.querySelector('.read-more-btn');
+  const description = item.querySelector('.service-description');
+  const button = document.createElement('button');
+  button.textContent = 'Подробнее';
+  button.classList.add('read-more-btn');
+
+  //  ARIA-атрибуты  для  доступности
+  button.setAttribute('aria-expanded', 'false');
+  description.setAttribute('aria-hidden', 'true');
+
+  item.appendChild(button);
+
+  //  Стили  для  анимации  (добавьте  их  в  CSS)
+  description.style.maxHeight = '0';
+  description.style.overflow = 'hidden';
+  description.style.transition = 'max-height 0.3s ease';
 
   button.addEventListener('click', () => {
-    description.classList.toggle('active'); //  Плавное  появление/исчезновение
-    button.textContent = description.classList.contains('active') ? 'Скрыть' : 'Подробнее';
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+    description.style.maxHeight = isExpanded ? '0' : `${description.scrollHeight}px`;
+    button.setAttribute('aria-expanded', !isExpanded);
+    description.setAttribute('aria-hidden', isExpanded);
+
+    button.textContent = isExpanded ? 'Подробнее' : 'Скрыть';
   });
 });
+
+
 // Фильтр портфолио 
 
 const filterButtons = document.querySelectorAll('.filter-button');
