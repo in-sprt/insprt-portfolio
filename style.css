@@ -290,67 +290,92 @@ nav {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /*  Адаптировано  для  меньших  карточек  */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
   gap: 30px;
 }
 
 .service-item {
-  padding: 30px;
+  position: relative;
+  width: 100%;
+  height: 300px; /* Фиксированная высота для карточки */
   border-radius: 10px;
+  overflow: hidden; 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  perspective: 1000px; /*  Для  3D-эффекта  */
 }
 
-.service-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.service-card-front, 
+.service-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  backface-visibility: hidden; /*  Скрываем  обратную  сторону  */
+  transition: transform 0.6s ease; /*  Добавляем  плавный  переход  */
+}
+
+.service-card-front {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  z-index: 2; /*  Передняя  сторона  поверх  задней  */
+}
+
+.service-card-back {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transform: rotateY(180deg); /*  Поворачиваем  обратную  сторону  */
+}
+
+.service-item:hover .service-card-front {
+  transform: rotateY(-180deg); 
+}
+
+.service-item:hover .service-card-back {
+  transform: rotateY(0deg);
 }
 
 .service-icon {
   font-size: 3rem;
-  color: var(--secondary-color);
   margin-bottom: 20px;
 }
 
 .service-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text-color);
   margin-bottom: 10px;
 }
 
 .service-description {
   font-size: 1rem;
-  color: var(--text-color);
   line-height: 1.6;
-  display: none; /*  Описание  скрыто  по  умолчанию  */
-}
-
-.read-more-btn {
-  background-color: transparent;
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
-  padding: 10px 20px;
-  margin-top: 15px; /*  Добавляем  отступ  сверху  */
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /*  Добавляем  transition  для  hover-эффекта  */
-  font-family: inherit; 
-}
-
-.read-more-btn:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  transform: translateY(-2px); /*  Легкое  "подпрыгивание"  при  наведении  */
+  text-align: left; /*  Выравнивание  текста  по  левому  краю  */
 }
 
 /*  Мобильная  версия  */
 @media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr; /*  Одна  колонка  на  мобильных  */
+  .service-item {
+    height: auto; /*  Отключаем  фиксированную  высоту  */
+  }
+
+  .service-card-front,
+  .service-card-back {
+    position: relative; /*  Отключаем  абсолютное  позиционирование  */
+    transform: none; /*  Отключаем  поворот  */
+    backface-visibility: visible; /*  Показываем  обе  стороны  */
+  }
+
+  .service-card-back {
+    display: none; /*  Скрываем  обратную  сторону  по  умолчанию  */
+  }
+
+  .service-item:hover .service-card-back {
+    display: block; /*  Показываем  обратную  сторону  при  наведении  */
   }
 }
 
