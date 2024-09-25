@@ -29,7 +29,7 @@ window.addEventListener('scroll', () => {
 
 // Инициализация слайдера Swiper (только на мобильных)
 if (window.innerWidth <= 768) {
-  const swiper = new Swiper('.services-grid', {
+  const swiper = new Swiper('.services-grid', { //  Инициализируем  для  .services-grid
     slidesPerView: 'auto',
     spaceBetween: 30,
     direction: 'horizontal',
@@ -39,6 +39,8 @@ if (window.innerWidth <= 768) {
     },
   });
 }
+
+// ... (код для портфолио) ...
 
 // Портфолио
 
