@@ -282,6 +282,7 @@ nav {
 
 /* СЕРВИСЫ */
 
+/* Services Section */
 #services {
   padding: 80px 0;
   background-color: var(--bg-color);
@@ -289,64 +290,49 @@ nav {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
 .service-item {
   position: relative;
-  width: 100%;
-  height: 300px;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  color: var(--text-color);
-  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.service-card-front,
-.service-card-back {
+.service-item:hover {
+  transform: translateY(-5px); /*  Эффект  поднятия  при  наведении  */
+}
+
+.service-item img {
+  width: 100%;
+  height: 300px; /*  Фиксированная  высота  изображения  */
+  object-fit: cover;
+  display: block;
+}
+
+.service-info {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  transition: opacity 0.3s ease;
-  opacity: 1;
-  box-sizing: border-box;  /*  Учитываем  padding  в  размерах  элемента  */
-}
-
-.service-card-front {
-  background-color: var(--primary-color);
-  z-index: 2;
-}
-
-.service-card-back {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  padding: 20px;
+  background-color: rgba(33, 33, 33, 0.8);
+  color: var(--text-color);
   opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
 }
 
-.service-item:hover .service-card-front {
-  opacity: 0;
-}
-
-.service-item:hover .service-card-back {
+.service-item:hover .service-info {
   opacity: 1;
-}
-
-.service-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  transform: translateY(0);
 }
 
 .service-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -354,62 +340,35 @@ nav {
 .service-description {
   font-size: 1rem;
   line-height: 1.6;
-  text-align: left;
-  padding: 0 20px; /* Добавляем внутренние отступы для текста */
 }
 
-/* Мобильная версия */
 /* Слайдер услуг (мобильная версия) */
 @media (max-width: 768px) {
-  .services-slider {
-    width: 100%;
-    height: auto; /*  Высота  будет  адаптироваться  к  содержимому  */
-    margin-bottom: 40px; /*  Добавим отступ снизу  */
+  .services-grid {
+    display: none; /*  Скрываем  сетку  на  мобильных  */
   }
 
-  .services-grid {
-    display: flex; /*  Располагаем  карточки  в  одну  линию  */
-    flex-direction: column;
-    gap: 30px; 
+  .services-slider.swiper {
+    display: block; /*  Показываем  слайдер  на  мобильных  */
+    width: 100%;
+    height: auto; 
+    margin-bottom: 40px; 
   }
 
   .service-item {
-    height: auto;
-    width: 100%; /*  Занимает  100%  ширины  контейнера  */
-    box-sizing: border-box;
-    margin: 0; /*  Убираем  отступы  */
+    width: 90%;  /*  Карточки  занимают  90%  ширины  контейнера  */
+    margin: 20px auto; /*  Центрируем  карточки  */
+    height: auto; /*  Высота  карточки  адаптируется  к  содержимому  */
   }
 
   .swiper-slide {
-    display: flex; /*  Для  вертикального  центрирования  карточки  в  слайде  */
+    display: flex; 
     justify-content: center;
     align-items: center;
   }
 
   .swiper-pagination {
-    margin-top: 20px; /*  Отступ  снизу  */
-  }
-
-  /*  Стили  для  карточек  на  мобильных  (переключение  по  клику)  */
-  .service-card-front, 
-  .service-card-back {
-    position: relative; /*  Отключаем  абсолютное  позиционирование  */
-    opacity: 1;
-    transform: none; 
-    backface-visibility: visible;
-    transition: none; 
-  }
-
-  .service-card-back {
-    display: none; 
-  }
-
-  .service-item.active .service-card-front { 
-    display: none;
-  }
-
-  .service-item.active .service-card-back {
-    display: block;
+    margin-top: 20px; 
   }
 }
 
