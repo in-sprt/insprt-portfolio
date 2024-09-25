@@ -295,12 +295,12 @@ nav {
 }
 
 .service-item {
-  position: relative;
+  position: relative; 
   border-radius: 10px;
-  overflow: hidden;
+  overflow: hidden; 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   color: var(--text-color);
-  cursor: pointer;
+  cursor: pointer; 
   transition: transform 0.3s ease;
 }
 
@@ -309,61 +309,58 @@ nav {
 }
 
 .service-icon-wrapper {
-  position: relative;
+  position: relative; 
   width: 100%;
-  height: 200px; 
+  height: 200px;  
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--secondary-color);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; 
 }
 
 .service-item:hover .service-icon-wrapper {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color); 
 }
 
 .service-icon {
-  font-size: 4rem; 
+  font-size: 4rem;  
   color: var(--primary-color);
   transition: transform 0.3s ease;
 }
 
 .service-item:hover .service-icon {
-  transform: scale(1.2);
-}
-
-/*  Скрываем  описание  на  ПК  */
-.service-title,
-.service-description {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  background-color: rgba(33, 33, 33, 0.8); 
-  opacity: 0; 
-  transition: opacity 0.3s ease;
-  z-index: 2; 
-  box-sizing: border-box;
+  transform: scale(1.2); 
 }
 
 .service-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--secondary-color);
+  margin: 20px 0 10px;
+  color: var(--text-color);
 }
 
 .service-description {
+  position: absolute;  /*  Абсолютное  позиционирование  */
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: rgba(33, 33, 33, 0.9);  /*  Полупрозрачный  фон  */
+  opacity: 0; /*  Скрываем  по  умолчанию  */
+  transition: opacity 0.3s ease; 
   font-size: 1rem;
   line-height: 1.6;
-  text-align: left;
-  color: var(--secondary-color);
+  text-align: left; 
 }
 
-.service-item:hover .service-title,
 .service-item:hover .service-description {
-  opacity: 1;
+  opacity: 1; 
 }
 
 /*  Мобильная  версия  */
