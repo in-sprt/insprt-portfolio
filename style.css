@@ -372,24 +372,34 @@ nav {
 }
 /*  Конец  изменений  для  ПК  */
 
-/*  Мобильная  версия  (без  изменений)  */
 @media (max-width: 768px) {
-  /*  ...  (стили  для  мобильной  версии  из  предыдущего  ответа)  ...  */
-  .service-title, 
-  .service-description {
-    position: static;
-    opacity: 1;
-    background-color: transparent;
-    padding: 0;
+  .services-grid {
+    display: flex;
+    flex-direction: row; /*  Располагаем  карточки  горизонтально  */
+    gap: 30px;
+    overflow-x: auto; /*  Добавляем  горизонтальную  прокрутку  */
+    -webkit-overflow-scrolling: touch; /*  Плавная  прокрутка  на  iOS  */
   }
+
+  .service-item {
+    flex-shrink: 0; 
+    width: 280px; /*  Фиксированная  ширина  карточки  */
+    height: auto;
+  }
+
+  /*  Отключаем  эффекты  hover  */
+  .service-item:hover .service-icon-wrapper {
+    background-color: var(--secondary-color); 
+  }
+
+  .service-item:hover .service-icon {
+    transform: none; 
+  }
+
   .service-title {
-    margin: 20px 0 10px;
-  }
-  .service-description {
-    padding: 0 20px 20px;
+    opacity: 1; 
   }
 }
-
 /* ПОРТФОЛИО */
 #portfolio {
   padding: 80px 0;
