@@ -297,7 +297,7 @@ nav {
 .service-item {
   position: relative;
   width: 100%;
-  height: auto; /*  Высота  адаптируется  к  содержимому  */
+  height: 300px; /*  Фиксированная  высота  для  ПК  */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -313,7 +313,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: auto; /*  Высота  адаптируется  к  содержимому  */
+  height: 100%; /*  Занимают  100%  высоты  родителя  */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -380,6 +380,7 @@ nav {
     flex-shrink: 0; 
     width: 90%; 
     margin: 0 auto; 
+    height: auto; /*  Высота  адаптируется  к  содержимому  на  мобильных  */
   }
 
   .swiper-slide {
