@@ -295,7 +295,6 @@ nav {
 }
 
 .service-item {
-  position: relative;
   width: 100%;
   height: 300px; /*  Фиксированная  высота  для  ПК  */
   border-radius: 10px;
@@ -305,6 +304,15 @@ nav {
   cursor: pointer; 
   perspective: 1000px; /* Для 3D-эффекта */
   transition: transform 0.6s ease; /* Добавляем плавный переход */
+  display: flex; /*  Используем  flexbox  для  .service-item  */
+  flex-direction: column; /*  Располагаем  контент  вертикально  */
+}
+
+/*  Стили  для  нового  оберточного  элемента  */
+.service-card-inner { 
+  position: relative; /*  Устанавливаем  position: relative  */
+  width: 100%;
+  height: 100%;
 }
 
 .service-card-front,
@@ -313,7 +321,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /*  Занимают  100%  высоты  родителя  */
+  height: 100%; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -368,8 +376,6 @@ nav {
     transform-style: flat; 
   }
 
-  /*  Удалили  display: flex  и  flex-direction: row  */
-  
   .swiper-wrapper {
     display: flex;
     flex-direction: row;
