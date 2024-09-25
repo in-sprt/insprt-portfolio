@@ -309,9 +309,9 @@ nav {
 }
 
 .service-icon-wrapper {
-  position: relative;
+  position: relative; 
   width: 100%;
-  height: 200px; 
+  height: 200px;  /*  Фиксированная  высота  для  блока  с  иконкой  */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -320,74 +320,65 @@ nav {
 }
 
 .service-item:hover .service-icon-wrapper {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color); 
 }
 
 .service-icon {
-  font-size: 4rem;
+  font-size: 4rem;  
   color: var(--primary-color);
   transition: transform 0.3s ease;
 }
 
 .service-item:hover .service-icon {
-  transform: scale(1.2);
-}
-
-/*  Изменения  для  отображения  описания  на  ПК  */
-.service-title,
-.service-description {
-  position: absolute; 
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box; 
-  opacity: 0; 
-  transition: opacity 0.3s ease, transform 0.3s ease; 
+  transform: scale(1.2); 
 }
 
 .service-title {
-  top: 50%;
-  transform: translateY(-150%);  /*  Сдвигаем  название  вверх  */
   font-size: 1.5rem;
   font-weight: 600;
+  margin: 20px 0 10px;
   color: var(--text-color);
+  transition: opacity 0.3s ease;
 }
 
+/*  Описание  поверх  иконки  (ПК)  */
 .service-description {
-  bottom: 0;
-  transform: translateY(100%); /*  Сдвигаем  описание  вниз  */
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: left;
-}
-
-.service-item:hover .service-title {
-  opacity: 1;
-  transform: translateY(-50%);  /*  Центрируем  название  */
+  position: absolute;  /*  Позиционируем  абсолютно  */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: rgba(33, 33, 33, 0.8);  /*  Полупрозрачный  фон  */
+  opacity: 0;  /*  Скрываем  по  умолчанию  */
+  transition: opacity 0.3s ease;
 }
 
 .service-item:hover .service-description {
-  opacity: 1;
-  transform: translateY(0);  /*  Показываем  описание  */
+  opacity: 1; 
 }
-/*  Конец  изменений  для  ПК  */
 
+/*  Мобильная  версия  */
 @media (max-width: 768px) {
   .services-grid {
     display: flex;
-    flex-direction: row; /*  Располагаем  карточки  горизонтально  */
+    flex-direction: row; 
     gap: 30px;
-    overflow-x: auto; /*  Добавляем  горизонтальную  прокрутку  */
-    -webkit-overflow-scrolling: touch; /*  Плавная  прокрутка  на  iOS  */
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
   }
 
   .service-item {
-    flex-shrink: 0; 
-    width: 280px; /*  Фиксированная  ширина  карточки  */
+    flex-shrink: 0;
+    width: 280px; 
     height: auto;
   }
 
-  /*  Отключаем  эффекты  hover  */
+  /*  Отключаем  эффекты  hover  для  мобильных  */
   .service-item:hover .service-icon-wrapper {
     background-color: var(--secondary-color); 
   }
@@ -396,10 +387,14 @@ nav {
     transform: none; 
   }
 
-  .service-title {
-    opacity: 1; 
+  /*  Описание  под  иконкой  (мобильные)  */
+  .service-description {
+    position: static; 
+    opacity: 1;
+    background-color: transparent; 
   }
 }
+
 /* ПОРТФОЛИО */
 #portfolio {
   padding: 80px 0;
