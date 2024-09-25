@@ -282,7 +282,7 @@ nav {
 
 /* СЕРВИСЫ */
 
-/* Services Section */
+/*  Services  Section  */
 #services {
   padding: 80px 0;
   background-color: var(--bg-color);
@@ -290,85 +290,96 @@ nav {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
 .service-item {
   position: relative;
-  overflow: hidden;
   border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .service-item:hover {
-  transform: translateY(-5px); /*  Эффект  поднятия  при  наведении  */
+  transform: translateY(-5px);
 }
 
-.service-item img {
+.service-icon-wrapper {
+  position: relative;
   width: 100%;
-  height: 300px; /*  Фиксированная  высота  изображения  */
-  object-fit: cover;
-  display: block;
+  height: 200px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  transition: background-color 0.3s ease;
 }
 
-.service-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  background-color: rgba(33, 33, 33, 0.8);
-  color: var(--text-color);
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.3s ease;
+.service-item:hover .service-icon-wrapper {
+  background-color: var(--accent-color);
 }
 
-.service-item:hover .service-info {
-  opacity: 1;
-  transform: translateY(0);
+.service-icon {
+  font-size: 4rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+  transform: scale(1.2);
 }
 
 .service-title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin: 20px 0 10px;
+  color: var(--text-color);
+  opacity: 0; /*  Скрываем  название  по  умолчанию  */
+  transition: opacity 0.3s ease;
+}
+
+.service-item:hover .service-title {
+  opacity: 1;
 }
 
 .service-description {
   font-size: 1rem;
   line-height: 1.6;
+  text-align: left;
+  padding: 0 20px 20px;
 }
 
-/* Слайдер услуг (мобильная версия) */
+/*  Мобильная  версия  */
 @media (max-width: 768px) {
   .services-grid {
-    display: none; /*  Скрываем  сетку  на  мобильных  */
-  }
-
-  .services-slider.swiper {
-    display: block; /*  Показываем  слайдер  на  мобильных  */
-    width: 100%;
-    height: auto; 
-    margin-bottom: 40px; 
+    display: flex;
+    flex-direction: row; /*  Располагаем  карточки  горизонтально  */
+    gap: 30px;
+    overflow-x: auto; /*  Добавляем  горизонтальную  прокрутку  */
+    -webkit-overflow-scrolling: touch; /*  Плавная  прокрутка  на  iOS  */
   }
 
   .service-item {
-    width: 90%;  /*  Карточки  занимают  90%  ширины  контейнера  */
-    margin: 20px auto; /*  Центрируем  карточки  */
-    height: auto; /*  Высота  карточки  адаптируется  к  содержимому  */
+    flex-shrink: 0; 
+    width: 280px; /*  Фиксированная  ширина  карточки  */
+    height: auto;
   }
 
-  .swiper-slide {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
+  /*  Отключаем  эффекты  hover  */
+  .service-item:hover .service-icon-wrapper {
+    background-color: var(--secondary-color); 
   }
 
-  .swiper-pagination {
-    margin-top: 20px; 
+  .service-item:hover .service-icon {
+    transform: none; 
+  }
+
+  .service-title {
+    opacity: 1; 
   }
 }
 
