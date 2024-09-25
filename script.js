@@ -27,6 +27,19 @@ window.addEventListener('scroll', () => {
   parallaxBg.style.backgroundPositionY = scrollY * 0.5 + 'px'; 
 });
 
+// Инициализация слайдера Swiper (только на мобильных)
+if (window.innerWidth <= 768) {
+  const swiper = new Swiper('.services-grid', { // Инициализируем для .services-grid
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    direction: 'horizontal',
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+}
+
 // Портфолио
 
 const projects = [
