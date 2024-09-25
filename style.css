@@ -297,7 +297,7 @@ nav {
 .service-item {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: auto; /*  Высота  адаптируется  к  содержимому  */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -305,8 +305,6 @@ nav {
   cursor: pointer; 
   perspective: 1000px; /* Для 3D-эффекта */
   transition: transform 0.6s ease; /* Добавляем плавный переход */
-  display: flex; /*  Используем  flexbox  для  .service-item  */
-  flex-direction: column; /*  Располагаем  контент  вертикально  */
 }
 
 .service-card-front,
@@ -315,7 +313,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto; /*  Высота  адаптируется  к  содержимому  */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -370,6 +368,8 @@ nav {
     transform-style: flat; 
   }
 
+  /*  Удалили  display: flex  и  flex-direction: row  */
+  
   .swiper-wrapper {
     display: flex;
     flex-direction: row;
@@ -380,7 +380,6 @@ nav {
     flex-shrink: 0; 
     width: 90%; 
     margin: 0 auto; 
-    height: auto; /*  Высота  адаптируется  к  содержимому  */
   }
 
   .swiper-slide {
