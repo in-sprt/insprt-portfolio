@@ -27,20 +27,6 @@ window.addEventListener('scroll', () => {
   parallaxBg.style.backgroundPositionY = scrollY * 0.5 + 'px'; 
 });
 
-// ... (код для мобильного меню, плавного скролла, параллакса и фильтрации портфолио) ...
-
-// Инициализация слайдера Swiper (только на мобильных)
-if (window.innerWidth <= 768) {
-  const swiper = new Swiper('.services-slider', {
-    slidesPerView: 1, //  Количество слайдов,  видимых одновременно
-    spaceBetween: 30, //  Отступ между слайдами
-    pagination: { //  Настройки пагинации
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-}
-
 // Портфолио
 
 const projects = [
