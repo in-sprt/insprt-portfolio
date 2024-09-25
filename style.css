@@ -324,7 +324,7 @@ nav {
 }
 
 .service-icon {
-  font-size: 4rem;
+  font-size: 4rem; 
   color: var(--primary-color);
   transition: transform 0.3s ease;
 }
@@ -333,53 +333,54 @@ nav {
   transform: scale(1.2);
 }
 
+/*  Скрываем  описание  на  ПК  */
+.service-title,
+.service-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(33, 33, 33, 0.8); 
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+  z-index: 2; 
+  box-sizing: border-box;
+}
+
 .service-title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 20px 0 10px;
-  color: var(--text-color);
-  opacity: 0; /*  Скрываем  название  по  умолчанию  */
-  transition: opacity 0.3s ease;
-}
-
-.service-item:hover .service-title {
-  opacity: 1;
+  color: var(--secondary-color);
 }
 
 .service-description {
   font-size: 1rem;
   line-height: 1.6;
   text-align: left;
-  padding: 0 20px 20px;
+  color: var(--secondary-color);
+}
+
+.service-item:hover .service-title,
+.service-item:hover .service-description {
+  opacity: 1;
 }
 
 /*  Мобильная  версия  */
 @media (max-width: 768px) {
-  .services-grid {
-    display: flex;
-    flex-direction: row; /*  Располагаем  карточки  горизонтально  */
-    gap: 30px;
-    overflow-x: auto; /*  Добавляем  горизонтальную  прокрутку  */
-    -webkit-overflow-scrolling: touch; /*  Плавная  прокрутка  на  iOS  */
+  /*  ...  (стили  для  мобильной  версии  из  предыдущего  ответа)  ...  */
+  .service-title, 
+  .service-description {
+    position: static;
+    opacity: 1;
+    background-color: transparent;
+    padding: 0;
   }
-
-  .service-item {
-    flex-shrink: 0; 
-    width: 280px; /*  Фиксированная  ширина  карточки  */
-    height: auto;
-  }
-
-  /*  Отключаем  эффекты  hover  */
-  .service-item:hover .service-icon-wrapper {
-    background-color: var(--secondary-color); 
-  }
-
-  .service-item:hover .service-icon {
-    transform: none; 
-  }
-
   .service-title {
-    opacity: 1; 
+    margin: 20px 0 10px;
+  }
+  .service-description {
+    padding: 0 20px 20px;
   }
 }
 
